@@ -21,10 +21,9 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{563dbf0a-f6f1-4ec5-9552-693750e45c7d}</ProjectGuid>
-    <RootNamespace>Aula3Exercicio</RootNamespace>
+    <ProjectGuid>{cf156713-f9e3-4626-ab21-2ce7113b489e}</ProjectGuid>
+    <RootNamespace>Aula2Apontadores</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>Aula03-Exercicio</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -140,11 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Calculadora.c" />
-    <ClCompile Include="Operacoes.c" />
+    <ClCompile Include="Pointers.c" />
+    <ClCompile Include="Programa.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Operacoes.h" />
+    <ClInclude Include="Dados.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

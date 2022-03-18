@@ -24,7 +24,7 @@
     <ProjectGuid>{b914103a-33ee-4d1d-9d3b-97031609a5de}</ProjectGuid>
     <RootNamespace>AulaHoje2</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>Aula02-Consolidacao</ProjectName>
+    <ProjectName>Revisoes - Consolidacao</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
