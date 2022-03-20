@@ -27,4 +27,7 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Aula 4 - Listas Ligadas\Aula 4 - Listas Ligadas.vcxproj" />
+  </ItemGroup>
 </Project>
