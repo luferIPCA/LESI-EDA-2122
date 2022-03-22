@@ -1,0 +1,252 @@
+\hypertarget{_listas_v1_8c}{}\section{D\+:/\+Temp/\+E\+D\+A-\/\+L\+E\+S\+I\+P\+L/\+Aulas/\+Aula 4 -\/ Listas Ligadas/\+Listas\+V1.c File Reference}
+\label{_listas_v1_8c}\index{D:/Temp/EDA-\/LESIPL/Aulas/Aula 4 -\/ Listas Ligadas/ListasV1.c@{D:/Temp/EDA-\/LESIPL/Aulas/Aula 4 -\/ Listas Ligadas/ListasV1.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Dados.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$ \mbox{\hyperlink{_listas_v1_8c_a3cd7524736ba1f94734a07469a0f1ed4}{cria\+Jogo}} (int cod, char $\ast$nome, int tipo)
+\begin{DoxyCompactList}\small\item\em Cria novo \mbox{\hyperlink{struct_jogo}{Jogo}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$ \mbox{\hyperlink{_listas_v1_8c_a0873a67048eea141a13a5c74de83122d}{Insere\+Jogo\+Inicio}} (\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$h, \mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$novo)
+\begin{DoxyCompactList}\small\item\em Insere um novo jogo no início da estrutura. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$ \mbox{\hyperlink{_listas_v1_8c_a13cee507ff7d833ec1cd49144c2291ae}{Insere\+Jogo\+Fim}} (\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$h, \mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$novo)
+\begin{DoxyCompactList}\small\item\em Insere jogo no final da lista. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$ \mbox{\hyperlink{_listas_v1_8c_a46df915fae407abad554086b2ae7832e}{Insere\+Jogo\+Ordenado}} (\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$h, \mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$novo)
+\begin{DoxyCompactList}\small\item\em Insere \mbox{\hyperlink{struct_jogo}{Jogo}} ordenado pelo código. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_listas_v1_8c_a9abb38ed654ed1d4fb6b047b117f1c98}{Existe\+Jogo}} (\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$h, int cod)
+\begin{DoxyCompactList}\small\item\em Verifica se jogo existe. Se existir devolve Bool! \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_listas_v1_8c_a7f8d9a635ea59e2c1dca030e5707e3de}{Existe\+Jogo\+Recursivo}} (\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$h, int cod)
+\begin{DoxyCompactList}\small\item\em Verifica se jogo existe. Se existir devolve Bool! Implementação Recursiva. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$ \mbox{\hyperlink{_listas_v1_8c_aabd8aeaa7e81ec44fe99f8bdb225f854}{Procura\+Jogo\+Ptr}} (\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$h, int cod)
+\begin{DoxyCompactList}\small\item\em Verifica se jogo existe. Se existir devolve endereço jogo! \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$ \mbox{\hyperlink{_listas_v1_8c_af0345f17c4eb67e9c2e10249576e9ee1}{Procura\+Jogo}} (\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$h, int cod)
+\begin{DoxyCompactList}\small\item\em Verifica se jogo existe. Se existir devolve cópia do jogo! \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$ \mbox{\hyperlink{_listas_v1_8c_ae3828269efa57af8170a95adecfa3acc}{Altera\+Jogo}} (\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$h, int cod, char novo\+Tipo)
+\begin{DoxyCompactList}\small\item\em Altera tipo de jogo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_listas_v1_8c_a1172fedb0558ed379209866e5ebff17f}{Altera\+Jogo\+Ptr}} (\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$$\ast$h, int cod, char tipo)
+\begin{DoxyCompactList}\small\item\em Altera um jogo\+: versão II. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_listas_v1_8c_af3347cdaa64448fddad8382eaaeac1df}{Conta\+Jogos}} (\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$h, char tipo)
+\begin{DoxyCompactList}\small\item\em Contar jogos de determinado tipo. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$ \mbox{\hyperlink{_listas_v1_8c_a07194c6087e865c278955ce27f121023}{Remove\+Jogo}} (\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$h, int cod)
+\begin{DoxyCompactList}\small\item\em Remove jogo. Còdigo indexado pelo seu código (cod) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$ \mbox{\hyperlink{_listas_v1_8c_ae0e72ef6cf68bcd716a1be5d493ca01d}{Ordena\+Lista}} (\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$h)
+\begin{DoxyCompactList}\small\item\em Ordena Lista. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_listas_v1_8c_afb3c6ce7a355980ebdac38f3a12acdef}{gravar\+Jogo\+Binario}} (char $\ast$nome\+Ficheiro, \mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$h)
+\begin{DoxyCompactList}\small\item\em Preservar dados em ficheiro. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$ \mbox{\hyperlink{_listas_v1_8c_a497da6796c7157558395425ec2c54d07}{ler\+Jogos\+Binario}} (char $\ast$nome\+Ficheiro)
+\begin{DoxyCompactList}\small\item\em Lê informação de ficheiro. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$ \mbox{\hyperlink{_listas_v1_8c_aa6627565918ffefec4b20c9e96d39367}{Cons\+List}} (\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$v, int size)
+\item 
+\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$ \mbox{\hyperlink{_listas_v1_8c_a546393d612332999fafc32a057c835ba}{Cons\+List\+Rec}} (\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$v, int size)
+\item 
+\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$ \mbox{\hyperlink{_listas_v1_8c_a9759b516bb98cc7f9281d72237dd7f56}{Cons\+List\+Rec\+II}} (\mbox{\hyperlink{struct_jogo}{Jogo}} v\mbox{[}$\,$\mbox{]}, int i, int size)
+\item 
+void \mbox{\hyperlink{_listas_v1_8c_aaf12460a91db8510c4f0882890002a92}{Mostra\+Lista}} (\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$h)
+\item 
+void \mbox{\hyperlink{_listas_v1_8c_ab5795a2ff1e0673bef31612ac8cd9438}{Mostra\+Jogo}} (\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$nodo)
+\item 
+int \mbox{\hyperlink{_listas_v1_8c_aebf12a86a4a85d46de42593cc46accec}{Conta\+Jogos\+Array}} (\mbox{\hyperlink{struct_jogo}{Jogo}} v\mbox{[}$\,$\mbox{]}, int size, char tipo)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_listas_v1_8c_ae3828269efa57af8170a95adecfa3acc}\label{_listas_v1_8c_ae3828269efa57af8170a95adecfa3acc}} 
+\index{ListasV1.c@{ListasV1.c}!AlteraJogo@{AlteraJogo}}
+\index{AlteraJogo@{AlteraJogo}!ListasV1.c@{ListasV1.c}}
+\subsubsection{\texorpdfstring{AlteraJogo()}{AlteraJogo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_jogo}{Jogo}}$\ast$ Altera\+Jogo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$}]{h,  }\item[{int}]{cod,  }\item[{char}]{novo\+Tipo }\end{DoxyParamCaption})}
+
+
+
+Altera tipo de jogo. 
+
+Alterar ficha de um jogo. \mbox{\Hypertarget{_listas_v1_8c_a1172fedb0558ed379209866e5ebff17f}\label{_listas_v1_8c_a1172fedb0558ed379209866e5ebff17f}} 
+\index{ListasV1.c@{ListasV1.c}!AlteraJogoPtr@{AlteraJogoPtr}}
+\index{AlteraJogoPtr@{AlteraJogoPtr}!ListasV1.c@{ListasV1.c}}
+\subsubsection{\texorpdfstring{AlteraJogoPtr()}{AlteraJogoPtr()}}
+{\footnotesize\ttfamily void Altera\+Jogo\+Ptr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$$\ast$}]{h,  }\item[{int}]{cod,  }\item[{char}]{tipo }\end{DoxyParamCaption})}
+
+
+
+Altera um jogo\+: versão II. 
+
+
+\begin{DoxyItemize}
+\item 
+\end{DoxyItemize}\mbox{\Hypertarget{_listas_v1_8c_aa6627565918ffefec4b20c9e96d39367}\label{_listas_v1_8c_aa6627565918ffefec4b20c9e96d39367}} 
+\index{ListasV1.c@{ListasV1.c}!ConsList@{ConsList}}
+\index{ConsList@{ConsList}!ListasV1.c@{ListasV1.c}}
+\subsubsection{\texorpdfstring{ConsList()}{ConsList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_jogo}{Jogo}}$\ast$ Cons\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$}]{v,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+Constroi uma lista a partir de um array de inteiros Não recursivo \mbox{\Hypertarget{_listas_v1_8c_a546393d612332999fafc32a057c835ba}\label{_listas_v1_8c_a546393d612332999fafc32a057c835ba}} 
+\index{ListasV1.c@{ListasV1.c}!ConsListRec@{ConsListRec}}
+\index{ConsListRec@{ConsListRec}!ListasV1.c@{ListasV1.c}}
+\subsubsection{\texorpdfstring{ConsListRec()}{ConsListRec()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_jogo}{Jogo}}$\ast$ Cons\+List\+Rec (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$}]{v,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+Constroi uma lista a partir de um array de inteiros Recursivo Versão 1 \mbox{\Hypertarget{_listas_v1_8c_a9759b516bb98cc7f9281d72237dd7f56}\label{_listas_v1_8c_a9759b516bb98cc7f9281d72237dd7f56}} 
+\index{ListasV1.c@{ListasV1.c}!ConsListRecII@{ConsListRecII}}
+\index{ConsListRecII@{ConsListRecII}!ListasV1.c@{ListasV1.c}}
+\subsubsection{\texorpdfstring{ConsListRecII()}{ConsListRecII()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_jogo}{Jogo}}$\ast$ Cons\+List\+Rec\+II (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_jogo}{Jogo}}}]{v\mbox{[}$\,$\mbox{]},  }\item[{int}]{i,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+Constroi uma lista a partir de um array de inteiros Recursivo Versão 2 \mbox{\Hypertarget{_listas_v1_8c_af3347cdaa64448fddad8382eaaeac1df}\label{_listas_v1_8c_af3347cdaa64448fddad8382eaaeac1df}} 
+\index{ListasV1.c@{ListasV1.c}!ContaJogos@{ContaJogos}}
+\index{ContaJogos@{ContaJogos}!ListasV1.c@{ListasV1.c}}
+\subsubsection{\texorpdfstring{ContaJogos()}{ContaJogos()}}
+{\footnotesize\ttfamily int Conta\+Jogos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$}]{h,  }\item[{char}]{tipo }\end{DoxyParamCaption})}
+
+
+
+Contar jogos de determinado tipo. 
+
+\mbox{\Hypertarget{_listas_v1_8c_aebf12a86a4a85d46de42593cc46accec}\label{_listas_v1_8c_aebf12a86a4a85d46de42593cc46accec}} 
+\index{ListasV1.c@{ListasV1.c}!ContaJogosArray@{ContaJogosArray}}
+\index{ContaJogosArray@{ContaJogosArray}!ListasV1.c@{ListasV1.c}}
+\subsubsection{\texorpdfstring{ContaJogosArray()}{ContaJogosArray()}}
+{\footnotesize\ttfamily int Conta\+Jogos\+Array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_jogo}{Jogo}}}]{v\mbox{[}$\,$\mbox{]},  }\item[{int}]{size,  }\item[{char}]{tipo }\end{DoxyParamCaption})}
+
+Conta jogos de determinado tipo num array de jogos \mbox{\Hypertarget{_listas_v1_8c_a3cd7524736ba1f94734a07469a0f1ed4}\label{_listas_v1_8c_a3cd7524736ba1f94734a07469a0f1ed4}} 
+\index{ListasV1.c@{ListasV1.c}!criaJogo@{criaJogo}}
+\index{criaJogo@{criaJogo}!ListasV1.c@{ListasV1.c}}
+\subsubsection{\texorpdfstring{criaJogo()}{criaJogo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_jogo}{Jogo}}$\ast$ cria\+Jogo (\begin{DoxyParamCaption}\item[{int}]{cod,  }\item[{char $\ast$}]{nome,  }\item[{int}]{tipo }\end{DoxyParamCaption})}
+
+
+
+Cria novo \mbox{\hyperlink{struct_jogo}{Jogo}}. 
+
+Aloca memória necessária para armazenar um jogo em memória
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome} & Nome do \mbox{\hyperlink{struct_jogo}{Jogo}} \\
+\hline
+{\em cod} & Código do \mbox{\hyperlink{struct_jogo}{Jogo}} \\
+\hline
+{\em tipo} & Tipo do \mbox{\hyperlink{struct_jogo}{Jogo}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_listas_v1_8c_a9abb38ed654ed1d4fb6b047b117f1c98}\label{_listas_v1_8c_a9abb38ed654ed1d4fb6b047b117f1c98}} 
+\index{ListasV1.c@{ListasV1.c}!ExisteJogo@{ExisteJogo}}
+\index{ExisteJogo@{ExisteJogo}!ListasV1.c@{ListasV1.c}}
+\subsubsection{\texorpdfstring{ExisteJogo()}{ExisteJogo()}}
+{\footnotesize\ttfamily bool Existe\+Jogo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$}]{h,  }\item[{int}]{cod }\end{DoxyParamCaption})}
+
+
+
+Verifica se jogo existe. Se existir devolve Bool! 
+
+\mbox{\Hypertarget{_listas_v1_8c_a7f8d9a635ea59e2c1dca030e5707e3de}\label{_listas_v1_8c_a7f8d9a635ea59e2c1dca030e5707e3de}} 
+\index{ListasV1.c@{ListasV1.c}!ExisteJogoRecursivo@{ExisteJogoRecursivo}}
+\index{ExisteJogoRecursivo@{ExisteJogoRecursivo}!ListasV1.c@{ListasV1.c}}
+\subsubsection{\texorpdfstring{ExisteJogoRecursivo()}{ExisteJogoRecursivo()}}
+{\footnotesize\ttfamily bool Existe\+Jogo\+Recursivo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$}]{h,  }\item[{int}]{cod }\end{DoxyParamCaption})}
+
+
+
+Verifica se jogo existe. Se existir devolve Bool! Implementação Recursiva. 
+
+\mbox{\Hypertarget{_listas_v1_8c_afb3c6ce7a355980ebdac38f3a12acdef}\label{_listas_v1_8c_afb3c6ce7a355980ebdac38f3a12acdef}} 
+\index{ListasV1.c@{ListasV1.c}!gravarJogoBinario@{gravarJogoBinario}}
+\index{gravarJogoBinario@{gravarJogoBinario}!ListasV1.c@{ListasV1.c}}
+\subsubsection{\texorpdfstring{gravarJogoBinario()}{gravarJogoBinario()}}
+{\footnotesize\ttfamily bool gravar\+Jogo\+Binario (\begin{DoxyParamCaption}\item[{char $\ast$}]{nome\+Ficheiro,  }\item[{\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$}]{h }\end{DoxyParamCaption})}
+
+
+
+Preservar dados em ficheiro. 
+
+\mbox{\Hypertarget{_listas_v1_8c_a13cee507ff7d833ec1cd49144c2291ae}\label{_listas_v1_8c_a13cee507ff7d833ec1cd49144c2291ae}} 
+\index{ListasV1.c@{ListasV1.c}!InsereJogoFim@{InsereJogoFim}}
+\index{InsereJogoFim@{InsereJogoFim}!ListasV1.c@{ListasV1.c}}
+\subsubsection{\texorpdfstring{InsereJogoFim()}{InsereJogoFim()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_jogo}{Jogo}}$\ast$ Insere\+Jogo\+Fim (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$}]{h,  }\item[{\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$}]{novo }\end{DoxyParamCaption})}
+
+
+
+Insere jogo no final da lista. 
+
+\mbox{\Hypertarget{_listas_v1_8c_a0873a67048eea141a13a5c74de83122d}\label{_listas_v1_8c_a0873a67048eea141a13a5c74de83122d}} 
+\index{ListasV1.c@{ListasV1.c}!InsereJogoInicio@{InsereJogoInicio}}
+\index{InsereJogoInicio@{InsereJogoInicio}!ListasV1.c@{ListasV1.c}}
+\subsubsection{\texorpdfstring{InsereJogoInicio()}{InsereJogoInicio()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_jogo}{Jogo}}$\ast$ Insere\+Jogo\+Inicio (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$}]{h,  }\item[{\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$}]{novo }\end{DoxyParamCaption})}
+
+
+
+Insere um novo jogo no início da estrutura. 
+
+\mbox{\Hypertarget{_listas_v1_8c_a46df915fae407abad554086b2ae7832e}\label{_listas_v1_8c_a46df915fae407abad554086b2ae7832e}} 
+\index{ListasV1.c@{ListasV1.c}!InsereJogoOrdenado@{InsereJogoOrdenado}}
+\index{InsereJogoOrdenado@{InsereJogoOrdenado}!ListasV1.c@{ListasV1.c}}
+\subsubsection{\texorpdfstring{InsereJogoOrdenado()}{InsereJogoOrdenado()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_jogo}{Jogo}}$\ast$ Insere\+Jogo\+Ordenado (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$}]{h,  }\item[{\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$}]{novo }\end{DoxyParamCaption})}
+
+
+
+Insere \mbox{\hyperlink{struct_jogo}{Jogo}} ordenado pelo código. 
+
+\mbox{\Hypertarget{_listas_v1_8c_a497da6796c7157558395425ec2c54d07}\label{_listas_v1_8c_a497da6796c7157558395425ec2c54d07}} 
+\index{ListasV1.c@{ListasV1.c}!lerJogosBinario@{lerJogosBinario}}
+\index{lerJogosBinario@{lerJogosBinario}!ListasV1.c@{ListasV1.c}}
+\subsubsection{\texorpdfstring{lerJogosBinario()}{lerJogosBinario()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_jogo}{Jogo}}$\ast$ ler\+Jogos\+Binario (\begin{DoxyParamCaption}\item[{char $\ast$}]{nome\+Ficheiro }\end{DoxyParamCaption})}
+
+
+
+Lê informação de ficheiro. 
+
+\mbox{\Hypertarget{_listas_v1_8c_ab5795a2ff1e0673bef31612ac8cd9438}\label{_listas_v1_8c_ab5795a2ff1e0673bef31612ac8cd9438}} 
+\index{ListasV1.c@{ListasV1.c}!MostraJogo@{MostraJogo}}
+\index{MostraJogo@{MostraJogo}!ListasV1.c@{ListasV1.c}}
+\subsubsection{\texorpdfstring{MostraJogo()}{MostraJogo()}}
+{\footnotesize\ttfamily void Mostra\+Jogo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$}]{nodo }\end{DoxyParamCaption})}
+
+Mostra dados de um nodo \mbox{\Hypertarget{_listas_v1_8c_aaf12460a91db8510c4f0882890002a92}\label{_listas_v1_8c_aaf12460a91db8510c4f0882890002a92}} 
+\index{ListasV1.c@{ListasV1.c}!MostraLista@{MostraLista}}
+\index{MostraLista@{MostraLista}!ListasV1.c@{ListasV1.c}}
+\subsubsection{\texorpdfstring{MostraLista()}{MostraLista()}}
+{\footnotesize\ttfamily void Mostra\+Lista (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$}]{h }\end{DoxyParamCaption})}
+
+Mostra todos os jogos existentes na estrutura \mbox{\Hypertarget{_listas_v1_8c_ae0e72ef6cf68bcd716a1be5d493ca01d}\label{_listas_v1_8c_ae0e72ef6cf68bcd716a1be5d493ca01d}} 
+\index{ListasV1.c@{ListasV1.c}!OrdenaLista@{OrdenaLista}}
+\index{OrdenaLista@{OrdenaLista}!ListasV1.c@{ListasV1.c}}
+\subsubsection{\texorpdfstring{OrdenaLista()}{OrdenaLista()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_jogo}{Jogo}}$\ast$ Ordena\+Lista (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$}]{h }\end{DoxyParamCaption})}
+
+
+
+Ordena Lista. 
+
+\mbox{\Hypertarget{_listas_v1_8c_af0345f17c4eb67e9c2e10249576e9ee1}\label{_listas_v1_8c_af0345f17c4eb67e9c2e10249576e9ee1}} 
+\index{ListasV1.c@{ListasV1.c}!ProcuraJogo@{ProcuraJogo}}
+\index{ProcuraJogo@{ProcuraJogo}!ListasV1.c@{ListasV1.c}}
+\subsubsection{\texorpdfstring{ProcuraJogo()}{ProcuraJogo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_jogo}{Jogo}}$\ast$ Procura\+Jogo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$}]{h,  }\item[{int}]{cod }\end{DoxyParamCaption})}
+
+
+
+Verifica se jogo existe. Se existir devolve cópia do jogo! 
+
+\mbox{\Hypertarget{_listas_v1_8c_aabd8aeaa7e81ec44fe99f8bdb225f854}\label{_listas_v1_8c_aabd8aeaa7e81ec44fe99f8bdb225f854}} 
+\index{ListasV1.c@{ListasV1.c}!ProcuraJogoPtr@{ProcuraJogoPtr}}
+\index{ProcuraJogoPtr@{ProcuraJogoPtr}!ListasV1.c@{ListasV1.c}}
+\subsubsection{\texorpdfstring{ProcuraJogoPtr()}{ProcuraJogoPtr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_jogo}{Jogo}}$\ast$ Procura\+Jogo\+Ptr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$}]{h,  }\item[{int}]{cod }\end{DoxyParamCaption})}
+
+
+
+Verifica se jogo existe. Se existir devolve endereço jogo! 
+
+\mbox{\Hypertarget{_listas_v1_8c_a07194c6087e865c278955ce27f121023}\label{_listas_v1_8c_a07194c6087e865c278955ce27f121023}} 
+\index{ListasV1.c@{ListasV1.c}!RemoveJogo@{RemoveJogo}}
+\index{RemoveJogo@{RemoveJogo}!ListasV1.c@{ListasV1.c}}
+\subsubsection{\texorpdfstring{RemoveJogo()}{RemoveJogo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_jogo}{Jogo}}$\ast$ Remove\+Jogo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_jogo}{Jogo}} $\ast$}]{h,  }\item[{int}]{cod }\end{DoxyParamCaption})}
+
+
+
+Remove jogo. Còdigo indexado pelo seu código (cod) 
+

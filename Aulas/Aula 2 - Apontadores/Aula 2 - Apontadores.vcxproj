@@ -145,9 +145,6 @@
   <ItemGroup>
     <ClInclude Include="Dados.h" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="..\Aula 4 - Listas Ligadas\Aula 4 - Listas Ligadas.vcxproj" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

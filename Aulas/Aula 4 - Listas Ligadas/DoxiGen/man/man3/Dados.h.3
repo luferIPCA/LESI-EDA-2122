@@ -1,0 +1,234 @@
+.TH "D:/Temp/EDA-LESIPL/Aulas/Aula 4 - Listas Ligadas/Dados.h" 3 "Tue Mar 22 2022" "Version 1.0" "Listas Ligadas Simples" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/Temp/EDA-LESIPL/Aulas/Aula 4 - Listas Ligadas/Dados.h \- Definições Globais para Lista Ligadas Simples (versão 1)  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdbool\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBJogo\fP"
+.br
+.RI "Estrutura para armazenar um jogo\&. "
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBN\fP   20"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBJogo\fP \fBJogo\fP"
+.br
+.RI "Estrutura para armazenar um jogo\&. "
+.ti -1c
+.RI "typedef struct \fBJogo\fP * \fBJogoPtr\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBExisteJogo\fP (\fBJogo\fP *h, int cod)"
+.br
+.RI "Verifica se jogo existe\&. Se existir devolve Bool! "
+.ti -1c
+.RI "bool \fBExisteJogoRecursivo\fP (\fBJogo\fP *h, int cod)"
+.br
+.RI "Verifica se jogo existe\&. Se existir devolve Bool! Implementação Recursiva\&. "
+.ti -1c
+.RI "\fBJogo\fP * \fBcriaJogo\fP (int cod, char *nome, int tipo)"
+.br
+.RI "Cria novo \fBJogo\fP\&. "
+.ti -1c
+.RI "\fBJogo\fP * \fBInsereJogoInicio\fP (\fBJogo\fP *h, \fBJogo\fP *novo)"
+.br
+.RI "Insere um novo jogo no início da estrutura\&. "
+.ti -1c
+.RI "\fBJogo\fP * \fBInsereJogoOrdenado\fP (\fBJogo\fP *h, \fBJogo\fP *novo)"
+.br
+.RI "Insere \fBJogo\fP ordenado pelo código\&. "
+.ti -1c
+.RI "\fBJogo\fP * \fBInsereJogoFim\fP (\fBJogo\fP *h, \fBJogo\fP *novo)"
+.br
+.RI "Insere jogo no final da lista\&. "
+.ti -1c
+.RI "bool \fBgravarJogoBinario\fP (char *nomeFicheiro, \fBJogo\fP *h)"
+.br
+.RI "Preservar dados em ficheiro\&. "
+.ti -1c
+.RI "\fBJogo\fP * \fBlerJogosBinario\fP (char *nomeFicheiro)"
+.br
+.RI "Lê informação de ficheiro\&. "
+.ti -1c
+.RI "\fBJogo\fP * \fBAlteraJogo\fP (\fBJogo\fP *h, int cod, char novoTipo)"
+.br
+.RI "Alterar ficha de um jogo\&. "
+.ti -1c
+.RI "void \fBAlteraJogoPtr\fP (\fBJogo\fP **h, int cod, char tipo)"
+.br
+.RI "Altera um jogo: versão II\&. "
+.ti -1c
+.RI "\fBJogo\fP * \fBRemoveJogo\fP (\fBJogo\fP *h, int cod)"
+.br
+.RI "Remove jogo\&. Còdigo indexado pelo seu código (cod) "
+.ti -1c
+.RI "\fBJogo\fP * \fBProcuraJogo\fP (\fBJogo\fP *h, int cod)"
+.br
+.RI "Verifica se jogo existe\&. Se existir devolve cópia do jogo! "
+.ti -1c
+.RI "\fBJogo\fP * \fBOrdenaLista\fP (\fBJogo\fP *h)"
+.br
+.RI "Ordena Lista\&. "
+.ti -1c
+.RI "void \fBMostraLista\fP (\fBJogo\fP *h)"
+.br
+.ti -1c
+.RI "void \fBMostraJogo\fP (\fBJogo\fP *nodo)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBJogo\fP * \fBheadLista\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definições Globais para Lista Ligadas Simples (versão 1) 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+lufer 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+2022 Structs, Constantes e Assinaturas de Funções Listas Ligadas Simples 
+.RE
+.PP
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define N   20"
+
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fBJogo\fP \fBJogo\fP"
+
+.PP
+Estrutura para armazenar um jogo\&. Um jogo contém um código (@cod), nome (@nome) e um tipo (@tipo)\&. 
+.SS "typedef struct \fBJogo\fP * \fBJogoPtr\fP"
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBJogo\fP* AlteraJogo (\fBJogo\fP * h, int cod, char novoTipo)"
+
+.PP
+Alterar ficha de um jogo\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcod,novoTipo\fP 
+.br
+\fIh\fP Apontador para início da Lista 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Apontador para início da Lista da Lista
+.RE
+.PP
+Alterar ficha de um jogo\&. 
+.SS "void AlteraJogoPtr (\fBJogo\fP ** h, int cod, char tipo)"
+
+.PP
+Altera um jogo: versão II\&. 
+.IP "\(bu" 2
+
+.PP
+
+.SS "\fBJogo\fP* criaJogo (int cod, char * nome, int tipo)"
+
+.PP
+Cria novo \fBJogo\fP\&. Aloca memória necessária para armazenar um jogo em memória
+.PP
+\fBParameters:\fP
+.RS 4
+\fInome\fP Nome do \fBJogo\fP 
+.br
+\fIcod\fP Código do \fBJogo\fP 
+.br
+\fItipo\fP Tipo do \fBJogo\fP 
+.RE
+.PP
+
+.SS "bool ExisteJogo (\fBJogo\fP * h, int cod)"
+
+.PP
+Verifica se jogo existe\&. Se existir devolve Bool! 
+.SS "bool ExisteJogoRecursivo (\fBJogo\fP * h, int cod)"
+
+.PP
+Verifica se jogo existe\&. Se existir devolve Bool! Implementação Recursiva\&. 
+.SS "bool gravarJogoBinario (char * nomeFicheiro, \fBJogo\fP * h)"
+
+.PP
+Preservar dados em ficheiro\&. 
+.SS "\fBJogo\fP* InsereJogoFim (\fBJogo\fP * h, \fBJogo\fP * novo)"
+
+.PP
+Insere jogo no final da lista\&. 
+.SS "\fBJogo\fP* InsereJogoInicio (\fBJogo\fP * h, \fBJogo\fP * novo)"
+
+.PP
+Insere um novo jogo no início da estrutura\&. 
+.SS "\fBJogo\fP* InsereJogoOrdenado (\fBJogo\fP * h, \fBJogo\fP * novo)"
+
+.PP
+Insere \fBJogo\fP ordenado pelo código\&. 
+.SS "\fBJogo\fP* lerJogosBinario (char * nomeFicheiro)"
+
+.PP
+Lê informação de ficheiro\&. 
+.SS "void MostraJogo (\fBJogo\fP * nodo)"
+Mostra dados de um nodo 
+.SS "void MostraLista (\fBJogo\fP * h)"
+Mostra todos os jogos existentes na estrutura 
+.SS "\fBJogo\fP* OrdenaLista (\fBJogo\fP * h)"
+
+.PP
+Ordena Lista\&. 
+.SS "\fBJogo\fP* ProcuraJogo (\fBJogo\fP * h, int cod)"
+
+.PP
+Verifica se jogo existe\&. Se existir devolve cópia do jogo! 
+.SS "\fBJogo\fP* RemoveJogo (\fBJogo\fP * h, int cod)"
+
+.PP
+Remove jogo\&. Còdigo indexado pelo seu código (cod) 
+.SH "Variable Documentation"
+.PP 
+.SS "\fBJogo\fP* headLista"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Listas Ligadas Simples from the source code\&.
