@@ -287,6 +287,7 @@ Jogo* OrdenaLista(Jogo* h) {
 * @brief Destroi todos os nodos da lista
 * @param [in]	h	Apontador para inicio da Lista
 */
+
 void DestroiLista(Jogo** h) {
 	if (h != NULL) {
 		Jogo* aux;
@@ -312,6 +313,9 @@ int ContaJogos(Jogo* h, char tipo) {
 	}
 	return c;
 }
+
+
+
 
 #pragma region FICHEIROS
 
