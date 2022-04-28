@@ -88,7 +88,7 @@ FAZER
 /*
 Insere nodo de forma ordenada!
 */
-NodoPtr InsereNodo(Nodo* h, NodoPtr n) {
+NodoPtr InsereNodo(Nodo* h, Nodo *n) { //Nodo * é o mesmo que NodoPtr
 	NodoPtr aux = h;
 	if (h == NULL) //se a lista estiver vazia
 	{
@@ -129,7 +129,7 @@ NodoPtr InsereNodo(Nodo* h, NodoPtr n) {
 /*
 Procura e devolve apontador (I)
 */
-NodoPtr Search(Nodo *h, Nodo *n)
+Nodo* Search(Nodo *h, Nodo *n)
 {	
 	if (!h)	 return NULL;	//if(h==NULL)
 	NodoPtr aux = h;
@@ -168,7 +168,7 @@ Nodo SearchV(Nodo *h, Nodo *valor) {
 		Nodo aux = { -2,NULL,NULL };	//Nodo "virtual" para controlar
 		return aux;	//????
 	}
-	NodoPtr aux = h;
+	Nodo* aux = h;
 
 	while (aux && (aux->v != valor->v))
 	{
@@ -227,7 +227,7 @@ NodoPtr Remove(Nodo *h, int num) {
 
 /*
 Remove elemento em Lista Dupla (II)
-Lista ordenada
+Lista ordenada...pode não ser necessário percorrer a lista toda!
 */
 NodoPtr RemoveII(Nodo *h, int num) {
 	if (h == NULL) return h;

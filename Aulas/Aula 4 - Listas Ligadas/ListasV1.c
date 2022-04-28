@@ -63,6 +63,46 @@ Jogo* InsereJogoInicio(Jogo* h, Jogo* novo) {
 	return h;
 }
 
+void InsereJogoInicioII(Jogo** h, Jogo* novo) {
+
+	if (novo == NULL) return h;	//Verificar se apontadores são válidos
+
+	//Verificar se o novo jogo já existe!!!
+	if (ExisteJogo(*h, novo->cod)) return h;	//se existir não insere!
+
+	if (*h == NULL)		//Lista está vazia
+	{
+		*h = novo;
+	}
+	else
+	{
+		novo->next = *h;	//aponta para onde "h" está a apontar
+		*h = novo;
+	}
+	return *h;
+}
+
+void InsereJogoInicioIII(Jogo* h, Jogo* novo) {
+
+	if (novo == NULL) 
+		h=NULL;	//Verificar se apontadores são válidos
+
+	//Verificar se o novo jogo já existe!!!
+	if (ExisteJogo(h, novo->cod)) return;	//se existir não insere!
+
+	if (h == NULL)		//Lista está vazia
+	{
+		h = novo;
+	}
+	else
+	{
+		novo->next = h;	//aponta para onde "h" está a apontar
+		h = novo;
+	}
+	return h;
+}
+
+
 
 /**
 * @brief Insere jogo no final da lista
@@ -265,6 +305,29 @@ Jogo* RemoveJogo(Jogo *h, int cod) {
 }
 
 /**
+* @brief Remove jogo de forma Recursiva. Còdigo indexado pelo seu código (cod)
+* @param [in]	h	Apontador para inicio da Lista
+* @param [in]	cod	Codigo do jogo a alterar
+* @return	Apontador para Lista
+*/
+Jogo* RemoveJogoRecursivo(Jogo *head, int cod) {
+	Jogo* aux;
+
+	if (head == NULL)
+		return NULL;
+
+	if (head->cod==cod) {
+		aux = head;
+		head=head->next;
+		free(aux);
+	}
+	else {
+		head->next = RemoveJogoRecursivo(head->next, cod);
+	}
+	return head;
+}
+
+/**
 * @brief Ordena Lista
 * @param [in]	h	Apontador para inicio da Lista
 * @return	Apontador para Lista ordenada
@@ -315,7 +378,9 @@ int ContaJogos(Jogo* h, char tipo) {
 }
 
 
-
+void PercorreLista(Jogo* h, void(*f)(Jogo* h)) {
+	f(h);
+}
 
 #pragma region FICHEIROS
 

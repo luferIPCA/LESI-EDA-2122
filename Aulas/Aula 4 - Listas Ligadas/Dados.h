@@ -52,6 +52,8 @@ bool ExisteJogo(Jogo* h, int cod);
 bool ExisteJogoRecursivo(Jogo* h, int cod);
 Jogo* criaJogo(int cod, char* nome, int tipo);
 Jogo* InsereJogoInicio(Jogo* h, Jogo* novo);
+void InsereJogoInicioII(Jogo** h, Jogo* novo);
+void InsereJogoInicioIII(Jogo* h, Jogo* novo);
 Jogo* InsereJogoOrdenado(Jogo* h, Jogo* novo);
 Jogo* InsereJogoFim(Jogo* h, Jogo* novo);
 bool gravarJogoBinario(char* nomeFicheiro, Jogo* h);
@@ -78,6 +80,9 @@ void DestroiLista(Jogo** h);
 void MostraLista(Jogo* h);
 //apresenta ficha de jogo
 void MostraJogo(Jogo* nodo);
+
+//Função de Ordem 2
+void PercorreLista(Jogo* h, void(*f)(Jogo* h));
 
 #pragma endregion
 

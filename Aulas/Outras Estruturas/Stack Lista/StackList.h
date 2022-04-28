@@ -2,9 +2,9 @@
 // <copyright file="StackLista.h" company="IPCA">
 //     Copyright IPCA. All rights reserved.
 // </copyright>
-// <date>20120</date>
+// <date>2020</date>
 // <author>lufer</author>
-// <email></email>
+// <email>lufer@ipca.pt</email>
 // <version></version>
 // <desc>Manipular Stack com Listas</desc>
 //-----------------------------------------------------------------------

@@ -17,8 +17,12 @@
 #include "Maquinas.h"
 
 /**
-*	Cria nova maquina...
-*/
+ * @brief .
+ * 
+ * @param novoCod
+ * @param novoNome
+ * @return 
+ */
 Maquina *CriaMaquina(int novoCod, char*novoNome) {
 	//aloca espaço de memória
 	Maquina *nova = (Maquina*) malloc(sizeof(Maquina));
@@ -87,11 +91,27 @@ Maquina* ProcuraMaquina(Maquina* maquina, int cod)
 		{
 			auxMaquinas2 = CriaMaquina(maquina->cod, maquina->nome);
 
-			auxMaquinas = insereMaquinaInicio(auxMaquinas, auxMaquinas2);
+			auxMaquinas = InsereMaquina(auxMaquinas, auxMaquinas2);
 		}
 
 		maquina = maquina->prox;
 	}
 
 	return auxMaquinas;
+}
+
+bool ComparaMaquinas(Maquina* a, Maquina* b) {
+	if (strcmp(a->nome, b->nome) == 0) return true;
+	return false;
+}
+
+int ContaMaquinas(Maquina* a, char* nome, bool(*p)(void* v1, void*v2)) {
+	int tot = 0;
+	Maquina* aux = a;
+	if (a == NULL) return 0;
+	while (aux) {
+		if ((*p)(aux->nome, nome) == 0) tot++;
+		aux = aux->prox;
+	}
+	return tot;
 }

@@ -17,6 +17,7 @@
 #ifndef MAQUINA
 
 #include <stdio.h>
+#include <stdbool.h>
 
 #define M 40
 typedef struct Maquina {
@@ -28,6 +29,9 @@ typedef struct Maquina {
 //cria nova maquina
 Maquina* CriaMaquina(int novoCod, char* novoNome);
 Maquina* InsereMaquina(Maquina* h, Maquina* nova);
+bool ComparaMaquinas(Maquina* a, Maquina* b);
+
+int ContaMaquinas(Maquina* a, char* nome, bool(*p)(void* v1, void* v2));
 
 
 #define MAQUINA 

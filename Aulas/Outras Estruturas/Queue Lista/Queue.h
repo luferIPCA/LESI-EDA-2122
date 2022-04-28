@@ -3,8 +3,8 @@
 //     Copyright IPCA. All rights reserved.
 // </copyright>
 // <date>2020</date>
-// <author></author>
-// <email></email>
+// <author>lufer</author>
+// <email>lufer@ipca.pt</email>
 // <version></version>
 // <desc>Manipulação de Queue com Listas</desc>
 //-----------------------------------------------------------------------

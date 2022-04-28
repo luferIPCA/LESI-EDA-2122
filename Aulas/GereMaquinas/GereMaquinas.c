@@ -21,14 +21,16 @@
 
 int main() {
 
-	Maquina* inicoLista;	
-	inicoLista= NULL;
+	Maquina* inicioLista;	
+	inicioLista= NULL;
 
 	Maquina* nova;
 	nova= CriaMaquina(12, "Corte");
-	inicoLista = InsereMaquina(inicoLista, nova);
+	inicioLista = InsereMaquina(inicioLista, nova);
 
 	nova = CriaMaquina(13, "Pintar");
-	inicoLista = InsereMaquina(inicoLista, nova);
+	inicioLista = InsereMaquina(inicioLista, nova);
+
+	int t = ContaMaquinas(inicioLista, "Pintar", &ComparaMaquinas);
 
 }

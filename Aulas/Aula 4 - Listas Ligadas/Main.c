@@ -35,7 +35,10 @@ int main() {
 	Jogo* novo = criaJogo(15, "Outro", 'A');
 
 	Jogo* headLista = NULL;		//inicio da lista
-	headLista = InsereJogoInicio(headLista, j1);
+	//Testes de Inserção
+	//InsereJogoInicioII(&headLista, j1);			//Funciona!
+	//InsereJogoInicioIII(headLista, j1);			//Não funciona!!
+	//headLista = InsereJogoInicio(headLista, j1);	//Funciona
 	headLista = InsereJogoInicio(headLista, j2);
 	headLista = InsereJogoInicio(headLista, j3);
 	headLista = InsereJogoInicio(headLista, novo);
@@ -78,9 +81,18 @@ int main() {
 	
 	bool b = gravarJogoBinario("Dados.bin", headLista);
 	DestroiLista(&headLista);
+
+
+	printf("\nAPOS DESTRUIR LISTA\n");
 	headLista = lerJogosBinario("Dados.bin");
-	MostraLista(headLista);
-	
+	//MostraLista(headLista);
+
+#pragma region FunçãoOrdem2
+
+	//Função de 2a Ordem: Método passa como parâmetro!
+	PercorreLista(headLista, &MostraLista);
+
+#pragma endregion
 
 #pragma endregion
 

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Contactos.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GereContactos.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HistoricoABP.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pessoas.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GenericaABP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Contatos.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pessoa.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{35619cbf-9b64-41f5-90b9-82b2f157f6a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{f31e5aab-c085-4945-a098-6f1967eb435e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
