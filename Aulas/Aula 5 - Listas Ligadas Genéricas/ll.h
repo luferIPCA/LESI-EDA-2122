@@ -60,14 +60,14 @@ ListElem* obtainElement(ListElem* head, void* data, int (*compare)(void * data1,
 
 
 
-ListElem* CreateElement(void* dados) {
-	ListElem* nova = (ListElem*)malloc(sizeof(ListElem));
-	if (nova != NULL) {
-		nova->data = dados;
-		nova->next = NULL;
-	}
-	return nova;
-}
+//ListElem* CreateElement(void* dados) {
+//	ListElem* nova = (ListElem*)malloc(sizeof(ListElem));
+//	if (nova != NULL) {
+//		nova->data = dados;
+//		nova->next = NULL;
+//	}
+//	return nova;
+//}
 
 //
 //typedef struct Maquina {

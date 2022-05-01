@@ -51,6 +51,7 @@ int main() {
 	ListaMaquinas* head = NULL;		//marca o ínicio da lista; No inicio a lista está vazia
 	
 	head = CarregaDados("Fabrica1", head);		//Carrega dados do ficheiro
+	
 	if (head == NULL) {
 		//a)
 		Maquina* nova = CriaMaquinaNova(12);

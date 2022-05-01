@@ -33,9 +33,10 @@ void main()
 	 j->preferencias[3].pontuacao = 0;
 	 strcpy(j->preferencias[4].arma,"-");
 	 j->preferencias[4].pontuacao = 0;
-	 //lista = addItemHead(lista,j);
+	 
+	 lista = addItemHead(lista,j);
 
-	 lista = addItemOrderedIterative(lista, j, &compararNomes);
+	 //lista = addItemOrderedIterative(lista, j, &compararNomes);
 
 	 j = (Jogador) malloc(sizeof(struct Dados));
 	 j->numero = 3;

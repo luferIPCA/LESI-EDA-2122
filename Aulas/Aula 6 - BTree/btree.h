@@ -1,13 +1,15 @@
+/*****************************************************************//**
+ * @file   btree.h
+ * @brief  Árvores Binárias de Procura - (Binary Search Tree )
+ * 
+ * @author  lufer
+ * @email	lufer@ipca.pt
+ * @date    April 2022
+ *********************************************************************/
 /*
-Árvores Binárias de Procura - (Binary Search Tree )
-lufer@ipca.pt
 Ver:
 https://www.geeksforgeeks.org/binary-tree-set-1-introduction/?ref=lbp
-
 */
-
-//#pragma once
-
 
 #ifndef BTREE
 #define BTREE
@@ -16,10 +18,15 @@ https://www.geeksforgeeks.org/binary-tree-set-1-introduction/?ref=lbp
 
 typedef   enum Boolean { false, true }   Boolean;
 
-//Valor do nodo de uma árvore - Elemento
+/**
+ * Valor do nodo de uma árvore - Elemento.
+ */
 typedef struct Element {
 	int val;
-} Element;
+	char* nome;
+}Element;
+
+//typedef struct Element Element;
 
 
 //H1: Nodo da árvore

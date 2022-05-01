@@ -239,7 +239,7 @@ ListaPessoa* RemovePessoa(ListaPessoa* h, int nc, ListElem **historico) {
 		}
 		//Remover pessoa
 		//Atualizar head
-		if (auxAnt == h)
+		if (aux == h)
 		{
 			h = aux->proxPessoa;
 		}

@@ -229,12 +229,16 @@ ListaPessoa* GetAll(char* fileName, ListaPessoa* h) {
  * @param p2
  * @return 
  */
-int ComparaNC(void *p1, void* p2){
+int ComparaNC(Pessoa *p1, Pessoa* p2){
 	//((Element*)e)->data
 	//Pessoa* q = (Pessoa*)p->data;
-	Pessoa *p = (Pessoa*)p1;
-	Pessoa* q = (Pessoa*)p2;
-	return (p->nc - q->nc);
+	//Pessoa *p = (Pessoa*)p1;
+	//Pessoa* q = (Pessoa*)p2;
+	if (p2 == NULL) return 1;
+	else
+		if (p1 == NULL) return -1;
+		else
+			return (p1->nc - p2->nc);
 }
 
 /**
@@ -262,7 +266,7 @@ ListaPessoa* RemovePessoaABP(ListaPessoa* h, int nc, Node **historico) {
 		}
 		//Remover pessoa da Lista de Pessoas e Insere no Histórico
 		//Atualizar head
-		if (auxAnt == h)
+		if (aux == h)
 		{
 			h = aux->proxPessoa;
 		}
@@ -270,13 +274,13 @@ ListaPessoa* RemovePessoaABP(ListaPessoa* h, int nc, Node **historico) {
 		//Registar no Historico - Arvore Binária
 		aux->proxPessoa = NULL;
 		//Cria nodo da árvore
-		Element *e = (Element*)malloc(sizeof(Element));
+		//Element *e = (Element*)malloc(sizeof(Element));
 		//Coloca informação da pessoa no Nodo
-		e->data = &(aux->fichaPessoa);
+		//e->data = &(aux->fichaPessoa);
 		//elimina na lista
 		//free(aux);
 		//Insere na Árvore. Usa o método ComparaNC
-		*historico = AddNode(*historico, e, ComparaNC);
+		*historico = AddNode(*historico, &(aux->fichaPessoa), ComparaNC);
 	}
 	return h;
 }
@@ -287,9 +291,9 @@ ListaPessoa* RemovePessoaABP(ListaPessoa* h, int nc, Node **historico) {
  * 
  * @param q
  */
-void ShowPessoa(void *q)
+void ShowPessoa(Pessoa *p)
 {
-	Pessoa* p = (Pessoa*)q;
+	//Pessoa* p = (Pessoa*)q;
 	if (p != NULL)
 		printf("NC:%d  - Nome:%s\n", p->nc, p->nome);
 }

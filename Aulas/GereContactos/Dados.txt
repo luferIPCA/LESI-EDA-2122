@@ -3,3 +3,5 @@ PP;123;Email;xxx@yyy.pt
 JJ;134;Telef;222333444
 JJ;134;Email;jjj@xxx.pt
 KK;1;Fax;123456789
+KK;1;Email;aaa@bbb.pt
+KK;1;Email;ddd@bbb.pt

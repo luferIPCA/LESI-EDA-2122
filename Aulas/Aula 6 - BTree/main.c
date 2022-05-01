@@ -12,7 +12,7 @@ int main() {
 
 	setlocale(LC_ALL, "Portuguese");
 
-	PtrNode raiz = InitTree();		//raiz=NULL;
+	Node* raiz = InitTree();		//raiz=NULL;
 	//printf("%d", raiz == NULL);
 
 	Element e;

@@ -27,8 +27,9 @@ PtrNode InitTree() {
  * @param e
  * @return 
  */
-PtrNode NewNode(Element e) {
-	PtrNode node = (PtrNode)malloc(sizeof(Node));
+
+Node* NewNode(Element e) {
+	Node* node = (Node*)malloc(sizeof(Node));
 	if (node == NULL) return NULL;	//problemas ao criar espaço em memória	
 	node->element = e;
 	node->leftTree = NULL;
@@ -140,11 +141,14 @@ void DoSomethingToAllNodes(struct Node *root)
 	}
 }
 
-
-/*
-Insere Nodo da Árvore
-*/
-PtrNode AddNode(PtrNode root, Element e) {
+/**
+ * @brief Insere Nodo da Árvore.
+ * 
+ * @param root
+ * @param e
+ * @return 
+ */
+Node* AddNode(Node* root, Element e) {
 	if (root == NULL)		//arvore vazia
 	{
 		root = NewNode(e);		
@@ -157,10 +161,7 @@ PtrNode AddNode(PtrNode root, Element e) {
 		else
 			if (root->element.val < e.val)		//Insere à direita
 				root->rightTree = AddNode(root->rightTree, e);
-			else
-			{ 
-				//já existe, não insere!
-			}
+			
 	}
 	return root;
 }
@@ -322,21 +323,26 @@ PtrNode FindMin(PtrNode root) {
 		return(FindMin(root->leftTree));
 }
 
-void PreOrder(PtrNode root) {
+void PreOrder(Node* root) {
 	if (root == NULL) return;
 	printf("Val=%d\n", root->element.val);
 	PreOrder(root->leftTree);
 	PreOrder(root->rightTree);
 }
 
-void PosOrder(PtrNode root){
+void PosOrder(Node* root){
 	if (root == NULL) return;
 	PosOrder(root->leftTree);
 	PosOrder(root->rightTree);
 	printf("Val=%d", root->element.val);	
 }
 
-void InOrder(PtrNode root){
+/**
+ * @brief Ordenado!
+ * 
+ * @param root
+ */
+void InOrder(Node* root){
 	if (root == NULL) return;
 	InOrder(root->leftTree);
 	printf("Val=%d", root->element.val);

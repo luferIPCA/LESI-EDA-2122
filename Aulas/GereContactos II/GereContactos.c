@@ -50,7 +50,7 @@ int main() {
 
 	//Gere Historico
 	inicio = RemovePessoa(inicio, 12345, &historico);
-	puts("\nApós Temoção\n");
+	puts("\nApós Remoção\n");
 	MostraTodasPessoas(inicio);
 	puts("\nHistórico\n");
 	Show(historico, ShowPessoa);

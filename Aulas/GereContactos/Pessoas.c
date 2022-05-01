@@ -175,6 +175,7 @@ bool SaveAll(ListaPessoa* h, char* fileName) {
 	FILE* fp;
 
 	if ((fp = fopen(fileName, "wb")) == NULL) return false;
+
 	//grava n registos no ficheiro
 	ListaPessoa* aux = h;
 	TodaInformacaoPessoa auxFile;	//struct para gravar em ficheiro!
@@ -233,8 +234,11 @@ ListaPessoa* GetData(char* fileName) {
 	char linhaFicheiro[MAX];
 
 	if ((fp = fopen(fileName, "r")) == NULL) return NULL;
+	
 	while (fgets(linhaFicheiro,MAX,fp) != NULL)
 		{
+		//[^0-9]
+		//[^a-zA-Z]
 		sscanf(linhaFicheiro,"%[^;];%d;%[^;];%s", p.nome, &p.nc, c.desc, c.valor);
 	
 		if (ProcuraPessoa(h, p.nc) == NULL) {//se pessoa ainda não está em memória
