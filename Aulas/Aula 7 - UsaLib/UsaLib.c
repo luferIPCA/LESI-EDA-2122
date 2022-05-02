@@ -1,3 +1,6 @@
+/**
+Uso de Bibliotecas
+*/
 #include <stdio.h>
 #include "c:\temp\Funcoes.h"
 
