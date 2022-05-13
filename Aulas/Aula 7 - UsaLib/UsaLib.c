@@ -6,11 +6,13 @@ Uso de Bibliotecas
 
 int x = 10;
 
-/// <summary>
-/// Função Recursiva
-/// </summary>
-/// <param name="y"></param>
-/// <returns></returns>
+
+/**
+ * @brief Função recursiva local auxiliar
+ * 
+ * @param y
+ * @return 
+ */
 int Aux(int y) {
 	static int f = 0;
 	if (y > 0) {
@@ -25,20 +27,18 @@ int Aux(int y) {
 }
 
 
-
+/**
+ * @brief Utilização de funções internas e externas (em bibliotecas).
+ * 
+ * @return 
+ */
 int main() {
 
-	//extern int x;
-
-	int aux = Soma(12, 13);
-
+	int aux = Soma(12, 13);	//Soma está implementada na biblioteca externa
 	printf("%d\n", x);
 
-	int x1 = Aux(3);
-
+	int x1 = Aux(3);		//Aux está implementada neste módulo
 	printf("X=%d - Y=%d", x, Aux(12));
-
-
 
 }
 

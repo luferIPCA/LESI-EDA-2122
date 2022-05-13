@@ -38,7 +38,6 @@ typedef struct Node {
 
 //typedef Node *PtrNode;
 
-
 //===========================================================
 //H2: Nodo da árvore generalizado - informação desacoplada!
 typedef struct NodeII {

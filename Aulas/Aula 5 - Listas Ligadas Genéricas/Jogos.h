@@ -17,7 +17,7 @@ typedef struct Dados
 	Preferencias preferencias[5]; // ordem de preferências (máximo de 5)
 }*Jogador;
 
-void show(void* data);
+void show(Jogador* j);
 int igual(void* data1, void* data2);
 int compararNomes(void* data1, void* data2);
 int comparar(void* data1, void* data2);

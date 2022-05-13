@@ -2,9 +2,9 @@
 *  @file GereContactos.c
  * @author lufer
  * @date 2022
- * @brief Lista Ligadas Simples (versão 1)
- *
- * Metodos para manipular uma Lista Ligada Simples de Contactos
+ * @brief	Lista Ligadas Simples (versão 1)
+ *			Resolução Folha de Exercícios 4.2
+ * Metodos para manipular uma Lista Ligada Genéricas de Histórico
  * @bug No known bugs.
 */
 #include "Contatos.h"

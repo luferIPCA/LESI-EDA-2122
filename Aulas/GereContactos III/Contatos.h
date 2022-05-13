@@ -7,11 +7,16 @@
  * Dados globais para uma Lista Ligada Simples de Contactos
  * @bug No known bugs.
 */
+
 #pragma once
+
 #pragma warning( disable : 4996 ) //evita MSG ERROS: _CRT_SECURE_NO_WARNINGS
 
 #include <stdio.h>
 #include <stdbool.h>
+
+
+#endif // !X
 
 #define M 40
 #define N 40

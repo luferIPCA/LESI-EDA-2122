@@ -10,7 +10,7 @@
 #include "Generica.h"
 
 /**
- * @brief .
+ * @brief Adiciona no fim da lista!
  * 
  * @param head
  * @param data

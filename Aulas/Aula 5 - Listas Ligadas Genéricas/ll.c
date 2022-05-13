@@ -6,16 +6,18 @@
 
 /**
 */
+//ListElem* addItemHead(ListElem* head, ListElem *novo) 
 ListElem* addItemHead(ListElem* head, void *data) {
 	ListElem* aux;
 	
 	if((aux = (ListElem*) malloc(sizeof(ListElem))) == NULL)
 		return head;
-	
 	aux->data = data;
+	//aux->next = NULL;
+
 	aux->next = head;	//Insere à cabeça
-	
-	return aux;			//atualiza head
+	head = aux;
+	return head;			//atualiza head
 }
 
 ListElem* addItemLastRecursive(ListElem* head, void *data) {
@@ -52,10 +54,11 @@ ListElem* addItemLastIterative(ListElem* head, void *data) {
 	return head;
 }
 
-void showListIterative(ListElem* head, void (*show)(void *data)) {
-	while(head != NULL) {
-		show(head->data);
-		head = head->next;
+void showListIterative(ListElem* head, void (*mostra)(void *data)) {
+	ListElem* aux = head;
+	while(aux != NULL) {
+		mostra(aux->data);
+		aux = aux->next;
 	}
 }
 

@@ -1,0 +1,104 @@
+\hypertarget{_main_8c_source}{}\doxysection{Main.\+c}
+\label{_main_8c_source}\index{D:/Temp/EDA-\/LESIPL/Aulas/Aula 4 -\/ Listas Ligadas/Main.c@{D:/Temp/EDA-\/LESIPL/Aulas/Aula 4 -\/ Listas Ligadas/Main.c}}
+\mbox{\hyperlink{_main_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00016}00016 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00017}00017 \textcolor{preprocessor}{\#include <locale.h>}}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00018}00018 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_dados_8h}{Dados.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00020}\mbox{\hyperlink{_main_8c_a392fb874e547e582e9c66a08a1f23326}{00020}} \textcolor{preprocessor}{\#define MAX 10}}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00022}\mbox{\hyperlink{_main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{00022}} \textcolor{keywordtype}{int} \mbox{\hyperlink{_main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}() \{}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00024}00024     setlocale(LC\_ALL, \textcolor{stringliteral}{"{}Portuguese"{}});}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00026}00026 \textcolor{preprocessor}{\#pragma region VERSAO 1}}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00027}00027     }
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00028}00028     \textcolor{comment}{//Jogo j1 = \{7,"{}jogo 1"{},'A'\};}}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00029}00029     \textcolor{comment}{//Jogo j2 = \{ 9,"{}jogo 2"{},'A'\};}}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00030}00030     \textcolor{comment}{//Jogo j3 = \{ 111,"{}jogo 3"{},'T' \};}}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00032}00032     \mbox{\hyperlink{struct_jogo}{Jogo}} *j1 = \mbox{\hyperlink{_dados_8h_a5c07f5f3d9a6d478ed7aaa62dbb8eca0}{criaJogo}}(7, \textcolor{stringliteral}{"{}Jogo1"{}}, \textcolor{charliteral}{'A'});}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00033}00033     \mbox{\hyperlink{struct_jogo}{Jogo}} *j2 = \mbox{\hyperlink{_dados_8h_a5c07f5f3d9a6d478ed7aaa62dbb8eca0}{criaJogo}}(9,\textcolor{stringliteral}{"{}jogo 2"{}},\textcolor{charliteral}{'A'});}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00034}00034     \mbox{\hyperlink{struct_jogo}{Jogo}} *j3 = \mbox{\hyperlink{_dados_8h_a5c07f5f3d9a6d478ed7aaa62dbb8eca0}{criaJogo}}(111,\textcolor{stringliteral}{"{}jogo 3"{}},\textcolor{charliteral}{'T'});}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00035}00035     \mbox{\hyperlink{struct_jogo}{Jogo}}* novo = \mbox{\hyperlink{_dados_8h_a5c07f5f3d9a6d478ed7aaa62dbb8eca0}{criaJogo}}(15, \textcolor{stringliteral}{"{}Outro"{}}, \textcolor{charliteral}{'A'});}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00037}00037     \mbox{\hyperlink{struct_jogo}{Jogo}}* \mbox{\hyperlink{_dados_8h_af71bc0f615eceb6a57a67dc99b75b86e}{headLista}} = NULL;        \textcolor{comment}{//inicio da lista}}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00038}00038     \textcolor{comment}{//Testes de Inserção}}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00039}00039     \textcolor{comment}{//InsereJogoInicioII(\&headLista, j1);           //Funciona!}}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00040}00040     \textcolor{comment}{//InsereJogoInicioIII(headLista, j1);           //Não funciona!!}}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00041}00041     \textcolor{comment}{//headLista = InsereJogoInicio(headLista, j1);  //Funciona}}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00042}00042     \mbox{\hyperlink{_dados_8h_af71bc0f615eceb6a57a67dc99b75b86e}{headLista}} = \mbox{\hyperlink{_dados_8h_a1891327da37596dbee9202bd9007637a}{InsereJogoInicio}}(\mbox{\hyperlink{_dados_8h_af71bc0f615eceb6a57a67dc99b75b86e}{headLista}}, j2);}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00043}00043     \mbox{\hyperlink{_dados_8h_af71bc0f615eceb6a57a67dc99b75b86e}{headLista}} = \mbox{\hyperlink{_dados_8h_a1891327da37596dbee9202bd9007637a}{InsereJogoInicio}}(\mbox{\hyperlink{_dados_8h_af71bc0f615eceb6a57a67dc99b75b86e}{headLista}}, j3);}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00044}00044     \mbox{\hyperlink{_dados_8h_af71bc0f615eceb6a57a67dc99b75b86e}{headLista}} = \mbox{\hyperlink{_dados_8h_a1891327da37596dbee9202bd9007637a}{InsereJogoInicio}}(\mbox{\hyperlink{_dados_8h_af71bc0f615eceb6a57a67dc99b75b86e}{headLista}}, novo);}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00046}00046     \textcolor{comment}{/*headLista = InsereJogoFim(headLista, j1);}}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00047}00047 \textcolor{comment}{    headLista = InsereJogoFim(headLista, j2);}}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00048}00048 \textcolor{comment}{    headLista = InsereJogoFim(headLista, j3);}}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00049}00049 \textcolor{comment}{    headLista = InsereJogoFim(headLista, novo);*/}}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00051}00051     \mbox{\hyperlink{_dados_8h_aaf12460a91db8510c4f0882890002a92}{MostraLista}}(\mbox{\hyperlink{_dados_8h_af71bc0f615eceb6a57a67dc99b75b86e}{headLista}});}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00053}00053     \mbox{\hyperlink{_dados_8h_af71bc0f615eceb6a57a67dc99b75b86e}{headLista}}=\mbox{\hyperlink{_dados_8h_a7c2729bf2d8cf763b3e42a20674c1e71}{AlteraJogo}}(\mbox{\hyperlink{_dados_8h_af71bc0f615eceb6a57a67dc99b75b86e}{headLista}}, 15, \textcolor{charliteral}{'K'}); }
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00055}00055     novo = \mbox{\hyperlink{_dados_8h_a5c07f5f3d9a6d478ed7aaa62dbb8eca0}{criaJogo}}(150, \textcolor{stringliteral}{"{}OutroJogo"{}}, \textcolor{charliteral}{'T'});}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00057}00057     \mbox{\hyperlink{_dados_8h_af71bc0f615eceb6a57a67dc99b75b86e}{headLista}} = \mbox{\hyperlink{_dados_8h_a92ebf2ba1786e33a9d7716af947413bc}{InsereJogoOrdenado}}(\mbox{\hyperlink{_dados_8h_af71bc0f615eceb6a57a67dc99b75b86e}{headLista}}, novo);}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00058}00058     \mbox{\hyperlink{_dados_8h_aaf12460a91db8510c4f0882890002a92}{MostraLista}}(\mbox{\hyperlink{_dados_8h_af71bc0f615eceb6a57a67dc99b75b86e}{headLista}});}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00060}00060     \textcolor{keywordtype}{bool} aux = \mbox{\hyperlink{_dados_8h_a9abb38ed654ed1d4fb6b047b117f1c98}{ExisteJogo}}(\mbox{\hyperlink{_dados_8h_af71bc0f615eceb6a57a67dc99b75b86e}{headLista}}, 7);}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00061}00061     aux = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00062}00062     aux = \mbox{\hyperlink{_dados_8h_a7f8d9a635ea59e2c1dca030e5707e3de}{ExisteJogoRecursivo}}(\mbox{\hyperlink{_dados_8h_af71bc0f615eceb6a57a67dc99b75b86e}{headLista}}, 7);}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00063}00063     \textcolor{comment}{//Jogo *res = ProcuraJogo(headLista, 111);}}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00065}00065     \mbox{\hyperlink{_dados_8h_af71bc0f615eceb6a57a67dc99b75b86e}{headLista}} = \mbox{\hyperlink{_dados_8h_acd2de2631b2b2646a1e0e836d8e96bd1}{RemoveJogo}}(\mbox{\hyperlink{_dados_8h_af71bc0f615eceb6a57a67dc99b75b86e}{headLista}}, 15);}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00066}00066     printf(\textcolor{stringliteral}{"{}\(\backslash\)nApós remover 15"{}});}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00067}00067     \mbox{\hyperlink{_dados_8h_aaf12460a91db8510c4f0882890002a92}{MostraLista}}(\mbox{\hyperlink{_dados_8h_af71bc0f615eceb6a57a67dc99b75b86e}{headLista}});}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00068}00068     getche();}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00070}00070     \mbox{\hyperlink{_dados_8h_af71bc0f615eceb6a57a67dc99b75b86e}{headLista}} = \mbox{\hyperlink{_dados_8h_acd2de2631b2b2646a1e0e836d8e96bd1}{RemoveJogo}}(\mbox{\hyperlink{_dados_8h_af71bc0f615eceb6a57a67dc99b75b86e}{headLista}}, 7);}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00071}00071     printf(\textcolor{stringliteral}{"{}\(\backslash\)nApós remover 7\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00072}00072     \mbox{\hyperlink{_dados_8h_aaf12460a91db8510c4f0882890002a92}{MostraLista}}(\mbox{\hyperlink{_dados_8h_af71bc0f615eceb6a57a67dc99b75b86e}{headLista}});}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00074}00074     \mbox{\hyperlink{struct_jogo}{Jogo}}* novaHead = \mbox{\hyperlink{_dados_8h_a6e680c20b95c833b91cb2c572c59a31f}{OrdenaLista}}(\mbox{\hyperlink{_dados_8h_af71bc0f615eceb6a57a67dc99b75b86e}{headLista}});}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00075}00075     \mbox{\hyperlink{_dados_8h_aaf12460a91db8510c4f0882890002a92}{MostraLista}}(novaHead);}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00077}00077     getche();}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00080}00080     \textcolor{comment}{/*Utilizar ficheiros*/}}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00081}00081     }
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00082}00082     \textcolor{keywordtype}{bool} b = \mbox{\hyperlink{_dados_8h_afb3c6ce7a355980ebdac38f3a12acdef}{gravarJogoBinario}}(\textcolor{stringliteral}{"{}Dados.bin"{}}, \mbox{\hyperlink{_dados_8h_af71bc0f615eceb6a57a67dc99b75b86e}{headLista}});}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00083}00083     \mbox{\hyperlink{_dados_8h_aa078734b2f4c8552ca0ee5332b41744a}{DestroiLista}}(\&\mbox{\hyperlink{_dados_8h_af71bc0f615eceb6a57a67dc99b75b86e}{headLista}});}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00086}00086     printf(\textcolor{stringliteral}{"{}\(\backslash\)nAPOS DESTRUIR LISTA\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00087}00087     \mbox{\hyperlink{_dados_8h_af71bc0f615eceb6a57a67dc99b75b86e}{headLista}} = \mbox{\hyperlink{_dados_8h_a031c841ec3b7be1a5b9c9339505f2b2e}{lerJogosBinario}}(\textcolor{stringliteral}{"{}Dados.bin"{}});}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00088}00088     \textcolor{comment}{//MostraLista(headLista);}}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00090}00090 \textcolor{preprocessor}{\#pragma region FunçãoOrdem2}}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00092}00092     \textcolor{comment}{//Função de 2a Ordem: Método passa como parâmetro!}}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00093}00093     \mbox{\hyperlink{_dados_8h_aab868dba1e521c42b41aacdcf105ae69}{PercorreLista}}(\mbox{\hyperlink{_dados_8h_af71bc0f615eceb6a57a67dc99b75b86e}{headLista}}, \&\mbox{\hyperlink{_dados_8h_aaf12460a91db8510c4f0882890002a92}{MostraLista}});}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00094}00094 }
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00095}00095 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00096}00096 }
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00097}00097 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00098}00098 }
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00099}00099     getche();}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00100}00100     \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00101}00101 \}}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00102}00102 }
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00103}00103 \textcolor{comment}{//Outros métodos:}}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00104}00104 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00105}00105 \textcolor{comment}{//Constroi Lista a partir de Array}}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00106}00106 \textcolor{comment}{//Constroi Lista Recursiva a partir de um array}}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00107}00107 \textcolor{comment}{//Eliminar nodo da lista}}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00108}00108 \textcolor{comment}{//Eliminar todos    }}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00109}00109 \textcolor{comment}{//Procurar nodo}}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00110}00110 }
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00111}00111 \textcolor{comment}{//TPC: Não remover em definitivo...criar um ficheiro de log??}}
+\DoxyCodeLine{\Hypertarget{_main_8c_source_l00112}00112 }
+
+\end{DoxyCode}

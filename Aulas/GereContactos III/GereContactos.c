@@ -2,9 +2,9 @@
 *  @file GereContactos.c
  * @author lufer
  * @date 2022
- * @brief Lista Ligadas Simples (versão 1)
- *
- * Metodos para manipular uma Lista Ligada Simples de Contactos
+ * @brief	Lista Ligadas Simples (versão 1)
+ *			Resolução Folha de Exercícios 4.3
+ * Metodos para manipular uma Árvores Binárias de Histórico
  * @bug No known bugs.
 */
 #include "Contatos.h"
@@ -12,8 +12,35 @@
 #include "GenericaABP.h"
 #include  <locale.h>
 
+#pragma region GereInteiros
+//Métodos para demmonstrar árvore genérica aplicada a inteiros
+
+int CompInt(int *x, int *y) {
+	return (*x - *y);
+}
+
+void PrintInt(int* x) {
+	printf("%d\n", *x);
+}
+
+#pragma endregion
+
 int main() {
 	setlocale(LC_ALL, "Portuguese");
+
+#pragma region ArvoreGenericaInteiros
+
+	//Exemplo Árvore genérica para conter inteiros
+	Node* rootTemp = NULL;
+	int x = 12;
+	int y = 13;
+	rootTemp = AddNode(rootTemp, &x, CompInt);
+	rootTemp = AddNode(rootTemp, &y, CompInt);
+	ShowTree(rootTemp, PrintInt);
+
+#pragma endregion
+
+#pragma region Lista_e_Arvore_Pessoas_Contactos
 
 	//Inicia árvore
 	Node* historico = InitTree();
@@ -61,6 +88,7 @@ int main() {
 	inicio = RemovePessoaABP(inicio, 12345, &historico);
 	puts("\nApós Remoção (I)\n");
 	MostraTodasPessoas(inicio);
+
 	puts("\nHistórico\n");
 	ShowTree(historico, ShowPessoa);	//mesmo que &ShowPessoa
 	inicio = RemovePessoaABP(inicio, 1, &historico);
@@ -68,5 +96,12 @@ int main() {
 	MostraTodasPessoas(inicio);
 	puts("\nHistórico\n");
 	ShowTree(historico, ShowPessoa);	//mesmo que &ShowPessoa
+	
+	//Preservar e Carregar Árvore
+	bool aux = GuardaHistorico(historico, "tree.dat");
+	Node* historico2 = InitTree();
+	historico2 = GetHistorico("tree.dat");
+	ShowTree(historico2, ShowPessoa);
 
+#pragma endregion
 }
