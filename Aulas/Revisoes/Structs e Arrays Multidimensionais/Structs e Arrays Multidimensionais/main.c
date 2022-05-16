@@ -91,13 +91,18 @@ void main()
 		//int aux = procuraArrayBidimensional(abc2,)
 
 
-		//Arrays duplos como pointers
+		
 		int vals[][2] = { {1,2},{3,4},{4,5}};
 
 		ShowArrayDuplo(2,3,vals);
 		ShowArrayDuploII(vals, 3, 2);
 		ShowArrayDuploIII(vals, 3, 2);
-		ShowArrayDuploIV(vals, 3, 2);
+
+		//Arrays duplos como pointers
+		int** pp = ArrAlloc(3, 2);
+		pp = ArrFill(pp, 3, 2);
+		ShowArrayDuploIV(pp, 3, 2);
+
 		ChangeValue(vals, 1, 1, 12);
 		getche();
 	}

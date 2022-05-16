@@ -15,6 +15,7 @@
 #include <stdlib.h>
 #include "hash.h"
 
+#define SIZE 100
 
 /*
 Inicia a Tabela de Hash
@@ -227,6 +228,19 @@ void ShowHash(Node *ht[])
 	}
 }
 
+bool SaveHash(Node** h, char* fileName) {
+	FILE* fp = fopen(fileName, "wb");
+	if (fp == NULL) return false;
+	bool r = false;
+	for (int i = 0; i < MAX; i++) {
+		if (h[i] != NULL)
+		{
+			//r = SaveList(ht[i],fp);
+		}
+	}
+	fclose(fp);
+	return true;
+}
 
 /*
 DESAFIOS
@@ -307,10 +321,6 @@ int HashIII(char *v, int M) {
 	for (i = 1; v[i] != '\0'; i++)
 		h = (h * 251 + v[i]) % M;
 	return h;
-}
-
-bool SaveHash(Node** h, char* fileName) {
-
 }
 
 // ========================= EXERCÍCIO ==========================

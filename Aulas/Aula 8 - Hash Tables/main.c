@@ -8,16 +8,12 @@ lufer
 #include <locale.h>	// ASCII SET
 #include "hash.h"
 
-
-
-
-
 int main() 
 {	
 	setlocale(LC_ALL, "Portuguese");
 
 	printf("Hash(Maria)=%d\n", Hash("Maria"));
-	printf("Hash(Maria João)=%d\n", Hash("Maria João"));
+	printf("Hash(Maria João)=%d\n", Hash("Mario"));
 
 
 	// ===================== GERIR HASH ===================

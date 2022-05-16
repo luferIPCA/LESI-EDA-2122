@@ -5,15 +5,16 @@ Ver: https://beginnersbook.com/2014/01/2d-arrays-in-c-example/
 */
 
 #include "arraysMulti.h"
+#include <assert.h>
 
 
 
 /*
 Mostra o conteúdo de um array bidimensional
 */
-void mostraArrayBidimensional(int v[][N], int t) {
-	for (int i = 0; i < t; i++) {
-		for (int j = 0; j < N; j++) {
+void mostraArrayBidimensional(int v[][2], int t) {
+	for (int i = 0; i < N; i++) {
+		for (int j = 0; j < 2; j++) {
 			printf("v[%d][%d]=%d | ", i, j, v[i][j]);
 		}
 		printf("\n");
@@ -23,9 +24,9 @@ void mostraArrayBidimensional(int v[][N], int t) {
 /*
 inicializa array bidimensional com determinado valor
 */
-void inicalizaArrayBidimensional(int v[][N], int t, int valor) {
-	for (int i = 0; i < t; i++) {
-		for (int j = 0; j < N; j++) {
+void inicalizaArrayBidimensional(int v[][2], int t, int valor) {
+	for (int i = 0; i < N; i++) {
+		for (int j = 0; j < 2; j++) {
 			v[i][j] = valor;
 		}
 	}
@@ -92,3 +93,77 @@ void ChangeValue(int(*a)[2], int n, int m, int v)
 	//a[n][m] = v;
 	*(a)[m]= v;
 }
+
+#pragma region Mais
+
+int** ArrAlloc(size_t x, size_t y)
+{
+	int** pp = malloc(sizeof(*pp) * x);
+	assert(pp != NULL);
+	for (size_t i = 0; i < x; i++)
+	{
+		pp[i] = malloc(sizeof(**pp) * y);
+		assert(pp[i] != NULL);
+	}
+
+	return pp;
+}
+
+int** ArrFill(int** pp, size_t x, size_t y)
+{
+	for (size_t i = 0; i < x; i++)
+	{
+		for (size_t j = 0; j < y; j++)
+		{
+			pp[i][j] = (int)j + 1;
+		}
+	}
+
+	return pp;
+}
+
+void ArrPrint(int** pp, size_t x, size_t y)
+{
+	for (size_t i = 0; i < x; i++)
+	{
+		for (size_t j = 0; j < y; j++)
+		{
+			printf("%d ", pp[i][j]);
+		}
+		printf("\n");
+	}
+}
+
+void ArrFree(int** pp, size_t x, size_t y)
+{
+	(void)y;
+
+	for (size_t i = 0; i < x; i++)
+	{
+		free(pp[i]);
+		pp[i] = NULL;
+	}
+	free(pp);
+	pp = NULL;
+}
+
+///**
+// * @brief Código para testar estes métodos.
+// * 
+// * @return 
+// */
+//int main(void)
+//{
+//	size_t x = 2;
+//	size_t y = 3;
+//	int** pp;
+//
+//	pp = ArrAlloc(x, y);
+//	pp = ArrFill(pp, x, y);
+//	AarrPrint(pp, x, y);
+//	ArrFree(pp, x, y);
+//
+//	return 0;
+//}
+
+#pragma endregion

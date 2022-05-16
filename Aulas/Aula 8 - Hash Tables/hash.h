@@ -26,6 +26,12 @@ typedef struct HashTable {
 //h2: Tabela de Hash
 static struct Node* hashTable[MAX];	
 
+//char* nome;
+//char nome1[20];
+
+//char** nome2;
+//char nome2[][];
+
 
 //Assinaturas de Métodos
 //Funções de Hash

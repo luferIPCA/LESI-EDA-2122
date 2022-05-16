@@ -38,4 +38,8 @@ void ChangeValue(int(*a)[2], int n, int m, int v);
 
 #pragma endregion
 
+//Array duplo com pointers
+int** ArrAlloc(size_t x, size_t y);
+int** ArrFill(int** pp, size_t x, size_t y);
+
 #endif // !ARRAYDUP

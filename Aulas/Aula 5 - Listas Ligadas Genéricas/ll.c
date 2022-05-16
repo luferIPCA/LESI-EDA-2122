@@ -54,6 +54,21 @@ ListElem* addItemLastIterative(ListElem* head, void *data) {
 	return head;
 }
 
+/**
+ * @brief Insere ordenado com duplo apontador.
+ * 
+ * @param head
+ * @param newElem
+ * @param compare
+ */
+void addItemOrdered(ListElem** head, ListElem* newElem, int (*compare)(void* data1, void* data2)) {
+	ListElem** aux = head;
+	while (*aux && (compare((*aux)->data, newElem->data) < 0))
+		aux = &((*aux)->next);
+	newElem->next = *aux;
+	*aux = newElem;
+}
+
 void showListIterative(ListElem* head, void (*mostra)(void *data)) {
 	ListElem* aux = head;
 	while(aux != NULL) {
