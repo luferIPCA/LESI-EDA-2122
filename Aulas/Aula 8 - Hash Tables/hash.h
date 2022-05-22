@@ -1,13 +1,13 @@
-/*
-Hash Table: 
-	Index->Lista Ligada
-lufer
-*/
+/*****************************************************************//**
+ * @file   hash.h
+ * @brief  Tabelas de Hash
+ * Index->Lista Ligada
+ * @author lufer
+ * @date   May 2022
+ *********************************************************************/
 #include <stdio.h>
 #include <stdbool.h>
 #include "Listas.h"
-
-
 
 #ifndef HASH
 #define HASH
