@@ -3,7 +3,6 @@
 * Email: lufer@ipca.pt
 * Date: 28-02-2022
 * Desc: Módulo para Gerir Arrays
-* ???
 */
 
 #include<stdbool.h>
