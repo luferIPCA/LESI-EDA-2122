@@ -11,6 +11,8 @@
 #include "Contatos.h"
 
 
+#pragma region GerePessoas
+
 /**
  * @brief Constroi uma Lista
  * 
@@ -97,9 +99,11 @@ void MostraTodasPessoas(ListaPessoa* h) {
 	ListaPessoa* aux = h;
 	while (aux) {
 		printf("Pessoa: NC=%d - Nome= %s\n", aux->fichaPessoa.nc, aux->fichaPessoa.nome);
+		MostraContactos(aux->listaContactos);
 		aux = aux->proxPessoa;
 	}
 }
+
 
 /**
 */
@@ -113,13 +117,9 @@ void MostraContactosPessoa(ListaPessoa* inicio, int nc) {
 	}
 }
 
-
-
-#pragma region GereDataFile
-
 /**
  * @brief Carrega informação sobre Pessoas
- *
+ * 
  * @param fileName
  * @return  Lista de Pessoas
  */
@@ -141,44 +141,33 @@ ListaPessoa* GetAllPessoas(char* fileName) {
 	return h;
 }
 
-
-/**
- * Auxiliar para gravação em ficheiro.
- */
-typedef struct Aux {
-	char nome[20];
-	int idade;
-}Aux;
-
 /**
  * @brief Preserva informação da Pessoa
- *
+ * 
  * @param h
  * @param fileName
- * @return
+ * @return 
  */
 bool SavePessoas(ListaPessoa* h, char* fileName) {
 	if (h == NULL) return false;
 	FILE* fp;
-	Aux x;
 
 	if ((fp = fopen(fileName, "wb")) == NULL) return false;
 	ListaPessoa* aux = h;
-	//percorrer a lista
 	while (aux) {
-		x.idade = aux->idade;
-		strcpy(x.nome, aux->nome);
-		fwrite(&x, sizeof(x), 1, fp);
-		//fwrite(&aux->fichaPessoa, sizeof(aux->fichaPessoa), 1, fp);
+		fwrite(&aux->fichaPessoa, sizeof(aux->fichaPessoa), 1, fp);
 		aux = aux->proxPessoa;
 	}
 	fclose(fp);
 	return true;
 }
 
+#pragma endregion
+
+#pragma region GereDataFile
 
 /**
- * @brief Pessoas e respectivos contactos
+ * @brief .
  * 
  * @param h
  * @param fileName
@@ -189,7 +178,6 @@ bool SaveAll(ListaPessoa* h, char* fileName) {
 	FILE* fp;
 
 	if ((fp = fopen(fileName, "wb")) == NULL) return false;
-
 	//grava n registos no ficheiro
 	ListaPessoa* aux = h;
 	TodaInformacaoPessoa auxFile;	//struct para gravar em ficheiro!
@@ -223,7 +211,7 @@ ListaPessoa* GetAll(char* fileName, ListaPessoa* h) {
 	if ((fp = fopen(fileName, "rb")) == NULL) return NULL;
 	TodaInformacaoPessoa auxFile;
 	while (fread(&auxFile, sizeof(auxFile), 1, fp)) {
-		//aux = ProcuraPessoa(h, auxFile.nc);
+		aux = ProcuraPessoa(h, auxFile.nc);
 		//ListaPessoa* InsereContactoPessoa(ListaPessoa* h, Contacto* c, int nc)
 		h = InsereContactoPessoa(h, &auxFile.contacto, auxFile.nc);
 	}
@@ -231,40 +219,25 @@ ListaPessoa* GetAll(char* fileName, ListaPessoa* h) {
 	return h;
 }
 
-#define MAX 100
+#pragma endregion
+
+#pragma region Historico
 
 /**
- * @brief Carrega dados de entrada.
+ * @brief Compara duas pessoas pelo Numero de Contribuinte
  * 
- * @param fileName
+ * @param p1
+ * @param p2
  * @return 
  */
-ListaPessoa* GetData(char* fileName) {
-	FILE* fp;
-	ListaPessoa* h = NULL;
-	Pessoa p;			//auxiliar
-	Contacto c;			//auxiliar
-	char linhaFicheiro[MAX];
-
-	if ((fp = fopen(fileName, "r")) == NULL) return NULL;
-	
-	while (fgets(linhaFicheiro,MAX,fp) != NULL)
-		{
-		//[^0-9]
-		//[^a-zA-Z]
-		// PP;123;Telef;111222333 
-		sscanf(linhaFicheiro,"%[^;];%d;%[^;];%s", p.nome, &p.nc, c.desc, c.valor);
-	
-		if (ProcuraPessoa(h, p.nc) == NULL) {//se pessoa ainda não está em memória
-			//Insere Pessoa
-			h = InserePessoaListaPessoas(h, &p);
-		}
-		//Insere contacto na pessoa
-		h = InsereContactoPessoa(h, &c, p.nc);
-	}
-	fclose(fp);
-	return h;
+int ComparaNC(void *p1, void* p2){
+	//((Element*)e)->data
+	//Pessoa* q = (Pessoa*)p->data;
+	Pessoa *p = (Pessoa*)p1;
+	Pessoa* q = (Pessoa*)p2;
+	return (p->nc - q->nc);
 }
+
 #pragma endregion
 
 

@@ -16,5 +16,6 @@
  * @param val
  */
 void Change(int v[], int n, int pos, int val) {
+	//for(int i=0; i<n)
 	v[pos] = val;
 }

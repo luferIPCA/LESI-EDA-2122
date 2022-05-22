@@ -32,12 +32,11 @@ int main() {
 		inicio = InsereContactoPessoa(inicio, c2, 4321);
 	}
 
-
 	MostraTodasPessoas(inicio);
 	MostraContactosPessoa(inicio, 1);
 	MostraContactosPessoa(inicio, 123);
 
-	SavePessoas(inicio, "Pessoas.dat");
+	bool b = SavePessoas(inicio, "Pessoas.dat");
 	SaveAll(inicio, "All.dat");
 
 	MostraTodasPessoas(inicio);

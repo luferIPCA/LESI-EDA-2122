@@ -7,9 +7,7 @@
  * Dados globais para uma Lista Ligada Simples de Contactos
  * @bug No known bugs.
 */
-
 #pragma once
-
 #pragma warning( disable : 4996 ) //evita MSG ERROS: _CRT_SECURE_NO_WARNINGS
 
 #include <stdio.h>
@@ -37,4 +35,3 @@ ListaContactos* InsereContactoListaContactos(ListaContactos* h, Contacto* novo);
 ListaContactos* CriaNodoListaContactos(Contacto* c);
 
 #pragma endregion
-

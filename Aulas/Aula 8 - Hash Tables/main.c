@@ -16,6 +16,11 @@ int main()
 	printf("Hash(Maria João)=%d\n", Hash("Mario"));
 
 
+	HashTable nova;
+
+	nova.max = 71;
+	nova.tabela = malloc(nova.max * sizeof(Node));
+
 	// ===================== GERIR HASH ===================
 	{
 		//Iniciar Hash Table

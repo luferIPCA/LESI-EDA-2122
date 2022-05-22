@@ -43,7 +43,7 @@ void IniciaHash(Node *ht[], int n);
 Node **IniciaHashII(Node *ht[]);
 Node ** InsertValHash(char* autor, Node *ht[]);
 Node ** InsertNodeHash(Node *autor, Node *ht[]);
-Node ** InsertNodeHashInicio(Node* item, Node *ht[]);
+Node** InsertNodeHashInicio(Node* item, Node *ht[]);
 
 void ShowHash(Node *ht[]);
 NodePtr FindNode(char *val, Node *ht[]);

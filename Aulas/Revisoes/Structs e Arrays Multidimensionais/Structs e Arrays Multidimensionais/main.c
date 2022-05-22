@@ -8,6 +8,7 @@ Ver:
 #include <stdio.h>
 #include "funcoes.h"
 #include "ArraysMulti.h"
+#include "more.h"
 
 //typedef struct pessoa {
 //	int idade;
@@ -16,8 +17,11 @@ Ver:
 
 #define LEN(arr) ((int) (sizeof (arr) / sizeof (arr)[0]))
 
+
 void main()
-{
+{	
+
+#pragma region ARRAYS
 
 	int valores[10] = { -3,0,12,34,45 };
 
@@ -43,6 +47,8 @@ void main()
 
 		int val[] = { 2, -3, 67, 0,1 };
 
+		Change(val, 5, 1, 3);
+
 		printf("Antes de ordenar:\n");
 		mostraArraySimples(val, 5);	
 		ordenaArrayInteiros(val, 5);	//array sai alterado
@@ -63,6 +69,8 @@ void main()
 
 
 	//Qual o aluno com a melhor nota a LP1?
+
+	
 
 
 	// Array Multidimensionais
@@ -90,8 +98,6 @@ void main()
 
 		//int aux = procuraArrayBidimensional(abc2,)
 
-
-		
 		int vals[][2] = { {1,2},{3,4},{4,5}};
 
 		ShowArrayDuplo(2,3,vals);
@@ -107,7 +113,14 @@ void main()
 		getche();
 	}
 
-	//getche();
+#pragma endregion
+
+#pragma region MAISARRAYS
+	int v3[] = { 1,2,3,4 };
+	int* aux3 = GetEvenArray(v3, 4);
+#pragma endregion
+
+
 
 }
 

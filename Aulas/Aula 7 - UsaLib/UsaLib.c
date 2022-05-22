@@ -2,7 +2,7 @@
 Uso de Bibliotecas
 */
 #include <stdio.h>
-#include "c:\temp\Funcoes.h"
+#include "c:\temp\Func.h"
 
 int x = 10;
 

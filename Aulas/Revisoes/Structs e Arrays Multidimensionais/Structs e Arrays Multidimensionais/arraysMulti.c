@@ -1,7 +1,9 @@
 /*
 Funções para manipular arrays multidimensionais
 lufer@ipca.pt
-Ver: https://beginnersbook.com/2014/01/2d-arrays-in-c-example/
+Ver: 
+	https://beginnersbook.com/2014/01/2d-arrays-in-c-example/
+	https://www.geeksforgeeks.org/dynamically-allocate-2d-array-c/
 */
 
 #include "arraysMulti.h"
@@ -71,8 +73,7 @@ void ShowArrayDuploIII(int(*a)[2], int n, int m)
 	}
 }
 
-
-void ShowArrayDuploIV(int** a, int n, int m){
+void ShowArrayDuploIV(int **a, int n, int m){
 	for (int i = 0; i < n; ++i) {
 		for (int j = 0; j < m; ++j) {
 			printf("%d ", a[i][j]);
@@ -105,7 +106,6 @@ int** ArrAlloc(size_t x, size_t y)
 		pp[i] = malloc(sizeof(**pp) * y);
 		assert(pp[i] != NULL);
 	}
-
 	return pp;
 }
 

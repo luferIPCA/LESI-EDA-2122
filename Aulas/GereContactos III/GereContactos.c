@@ -11,6 +11,14 @@
 #include "Pessoa.h"
 #include "GenericaABP.h"
 #include  <locale.h>
+#include <malloc.h>
+
+
+void F(int **v) {
+	v[0]= -1; 
+	//return v;
+}
+
 
 #pragma region GereInteiros
 //Métodos para demmonstrar árvore genérica aplicada a inteiros
@@ -27,6 +35,12 @@ void PrintInt(int* x) {
 
 int main() {
 	setlocale(LC_ALL, "Portuguese");
+
+	int v[10] = { 1,2,3 };
+	//heap
+	int* v1 = (int*)malloc(10 * sizeof(int));
+
+	F(v);	//v == &v[0]
 
 #pragma region ArvoreGenericaInteiros
 

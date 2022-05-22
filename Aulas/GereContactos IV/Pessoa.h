@@ -29,8 +29,6 @@ typedef struct Pessoa {
 * Informação sobre a Pessoa, os seus contactos e apontador para outra Pessoa
 */
 typedef struct ListaPessoa {
-	char nome[10];
-	int idade;
 	struct Pessoa fichaPessoa;	/**< toda a informação da Pessoa */
 	struct ListaContactos* listaContactos;	/**< Todos os contactos da Pessoa*/
 	struct ListaPessoa* proxPessoa;	/**< Ligação a outra pessoa*/
@@ -43,9 +41,12 @@ Pessoa* CriaPessoa(char* nome, int nc);
 ListaPessoa* CriaNodoListaPessoas(Pessoa* c);
 ListaPessoa* InserePessoaListaPessoas(ListaPessoa* h, Pessoa* p);
 ListaPessoa* ProcuraPessoa(ListaPessoa* inicio, int nc);
+void MostraContactosPessoa(ListaPessoa* inicio, int nc);
 void MostraTodasPessoas(ListaPessoa* h);
 ListaPessoa* GetAllPessoas(char* fileName);
 bool SavePessoas(ListaPessoa* h, char* fileName);
+void ShowPessoa(Pessoa* data);
+int ComparaNC(Pessoa p1, Pessoa p2);
 
 #pragma endregion
 
@@ -71,7 +72,5 @@ typedef struct TodaInformacaoPessoa {
 bool SaveAll(ListaPessoa* h, char* fileName);
 
 ListaPessoa* GetAll(char* fileName, ListaPessoa* h);
-ListaPessoa* GetData(char* fileName);
 
 #pragma endregion
-
