@@ -1,9 +1,10 @@
-/*
-Listas Ligadas Duplas
-lufer
-*/
-
-//#define _CRT_SECURE_NO_WARNINGS
+/*****************************************************************//**
+ * @file   Duplas.h
+ * @brief  Listas Ligadas Duplas
+ * 
+ * @author lufer
+ * @date   May 2022
+ *********************************************************************/
 
 #include <time.h>		//manipular datas
 
