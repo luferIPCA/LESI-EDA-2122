@@ -1,4 +1,10 @@
-
+/*****************************************************************//**
+ * @file   Jogos.h
+ * @brief  Listas Ligadas Genéricas
+ * 
+ * @author lufer
+ * @date   May 2022
+ *********************************************************************/
 #pragma once
 
 #pragma region JOGOS
