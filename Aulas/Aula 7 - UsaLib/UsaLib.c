@@ -2,10 +2,9 @@
 Uso de Bibliotecas
 */
 #include <stdio.h>
-#include "c:\temp\Func.h"
+#include "Func.h"
 
 int x = 10;
-
 
 /**
  * @brief Função recursiva local auxiliar

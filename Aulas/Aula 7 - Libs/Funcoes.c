@@ -8,7 +8,7 @@
  *********************************************************************/
 
  /**
-  * @brief .
+  * @brief Calcula a soma de dos valores inteiros.
   *
   * @param x
   * @param y
