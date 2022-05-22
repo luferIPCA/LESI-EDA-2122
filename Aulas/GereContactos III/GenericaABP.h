@@ -1,7 +1,7 @@
 /*****************************************************************//**
  * @file   GenericaABP.h
  * @brief  Módulo genérico de Árvores Binárias de Procura
- * 
+ * ABG + Listas Ligadas Simples
  * @author lufer
  * @date   April 2022
  *********************************************************************/
