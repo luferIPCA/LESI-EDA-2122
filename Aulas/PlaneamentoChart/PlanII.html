@@ -1,0 +1,84 @@
+<!--
+Adapted
+Gantt from https://wikimass.com/google-charts/basic-gantt-chart
+by lufer
+-->
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+    <script src="https://www.google.com/jsapi"></script>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="jquery.csv.js"> </script>
+
+
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['gantt']});
+
+      //Função Auxiliar
+      //Carrega dados de csv
+      var arrayData;
+      $(function() {
+        // ler CSV
+        $.get("planoGantt.csv", function(csvString) {
+          arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});
+          //Para analisar dados de entrada!
+          console.table(arrayData);
+        });
+      });
+
+      //google.charts.setOnLoadCallback(drawChart);
+      google.charts.setOnLoadCallback(function () {drawChart(arrayData);});
+
+      function drawChart(arrayData) {
+        var container = document.getElementById('timeline');
+        var chart = new google.visualization.Gantt(container);
+        var dataTable = new google.visualization.DataTable();
+
+/*
+        dataTable.addColumn({ type: 'string', id: 'Maquina' });
+        dataTable.addColumn({ type: 'string', id: 'Label' });
+        dataTable.addColumn({ type: 'string', id: 'Resource' });
+        dataTable.addColumn({ type: 'date', id: 'Start' });
+        dataTable.addColumn({ type: 'date', id: 'End' });
+        dataTable.addColumn("number", "Duration");
+        dataTable.addColumn("number", "Percent Complete");
+        dataTable.addColumn("string", "Dependencies");
+*/
+
+
+        dataTable.addColumn("string", "Task ID");
+        dataTable.addColumn("string", "Task Name");
+        dataTable.addColumn("string", "Resource");
+        dataTable.addColumn("date", "Start");
+        dataTable.addColumn("date", "End");
+        dataTable.addColumn("number", "Duration");
+        dataTable.addColumn("number", "Percent Complete");
+        dataTable.addColumn("string", "Dependencies");
+
+        dataTable.addRows(arrayData);
+
+        var options = {
+          timeline: {
+            showRowLabels: true,
+            colorByRowLabel: true,
+
+          },
+          backgroundColor: '#ffd',
+          legend: { position: 'above' },
+        };
+
+        chart.draw(dataTable, options);
+
+      }
+
+    </script>
+  </head>
+  <body>
+  <h2>Planeamento - EDA (from csv file - abrir a partir de WebStorm)</h2>
+    <!--Encnntrar css e colocar em "style"-->
+    <div id="timeline" style="height: 180px;"></div>
+  </body>
+
+</html>
