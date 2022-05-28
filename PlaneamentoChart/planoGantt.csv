@@ -1,0 +1,4 @@
+p1,Maquina 1, Job 1 - Oper 2,,,12,0,
+p2,Maquina 2, Job 1 - Oper 3,,,7,0,p1
+p3,Maquina 3, Job 1 - Oper 3,,,3,0,p2
+p4,Maquina 4, Job 2 - Oper 7,,,3,0,p3

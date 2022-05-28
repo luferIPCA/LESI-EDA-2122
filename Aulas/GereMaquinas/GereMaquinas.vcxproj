@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Dados.h" />
+    <ClInclude Include="Jobs.h" />
     <ClInclude Include="Maquinas.h" />
   </ItemGroup>
   <ItemGroup>

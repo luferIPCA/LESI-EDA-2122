@@ -132,4 +132,3 @@ Node* GetHistorico(char* fileName) {
 	return aux;
 }
 
-

@@ -10,6 +10,7 @@
 #define M 4		//Número de Máquinas
 #define T 10	//Número de Tempos
 #define MAX 100
+#include <stdbool.h>
 
 typedef struct Maquina {
 	int codM;
@@ -33,9 +34,14 @@ typedef struct Job {
 typedef struct Cel {
 	int idJob;
 	int idOper;
+	//tempo
+	//outras
 } Cel;
 
 void IniciaPlano(Cel p[][T], int codJob, int codOper);
 void OcupaUm(Cel p[][T], int mId, int t, int codJob, int codOper);
 void OcupaVarios(Cel p[][T], int mId, int totTempo, Cel* c);
+void Ocupa(Cel p[][T], int mId, int totTempo, int codJ, int codO);
 
+bool SavePlan(char* fileName, Cel p[][T]);
+Cel** GetPlan(char* fileName);

@@ -41,19 +41,34 @@ void OcupaUm(Cel p[][T], int mId, int t, int codJob, int codOper) {
  * @param c	- Job e Operacao
  */
 void OcupaVarios(Cel p[][T], int mId, int totTempo, Cel* c) {
-	//procurar a primeira "casa" livre
+	
+	//Fase 1: Procurar a primeira "casa" livre
 	int col = 0;
 	while (p[mId][col].idJob != -1)
 		col++;
 
+	//Fase 1 - Ocupa a partir da posição livre encontrada
 	totTempo += col;	//porquê?
-	//ocupa a partir da posição livre encontrada
 	for (; col < totTempo; col++) {
 		p[mId][col].idJob = c->idJob;
 		p[mId][col].idOper = c->idOper;
 		//p[mId][col] = *c;
 	}
+
+	//Fase 2 - Procurar quando a operação anterior
+
+	//Fase 3 - Verficar se após posição livre existe tempo suficiente...
 }
+
+Ocupa(Cel p[][T], int mId, int totTempo, int codJ, int codO) {
+	Cel c = { .idJob=codJ, .idOper=codO };
+	OcupaVarios(p, mId, totTempo, &c);
+}
+
+
+bool SavePlan(char* fileName, Cel p[][T]);
+
+Cel** GetPlan(char* fileName);
 
 /**
  * @brief Carrega dados de um ficheiro CSV.

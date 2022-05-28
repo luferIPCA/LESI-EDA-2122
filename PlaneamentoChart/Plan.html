@@ -1,0 +1,63 @@
+<!--
+Adapted/
+by lufer
+-->
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+    <script src="https://www.google.com/jsapi"><script>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="jquery.csv.js"> </script>
+
+
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['timeline']});
+
+      //Carrega dados de csv
+      var arrayData;
+      $(function() {
+        // grab the CSV
+        $.get("plano.csv", function(csvString) {
+          arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});
+          //Para analisar dados de entrada!
+          //console.table(arrayData);
+        });
+      });
+
+      //google.charts.setOnLoadCallback(drawChart);
+      google.charts.setOnLoadCallback(function () {drawChart(arrayData);});
+
+      function drawChart(arrayData) {
+        var container = document.getElementById('timeline');
+        var chart = new google.visualization.Timeline(container);
+        var dataTable = new google.visualization.DataTable();
+
+        dataTable.addColumn({ type: 'string', id: 'Maquina' });
+        //dataTable.addColumn({ type: 'string', id: 'dummy bar label' });
+        dataTable.addColumn({ type: 'string', id: 'Bar' });
+        //dataTable.addColumn({ type: 'string', role: 'tooltip' });
+        dataTable.addColumn({ type: 'number', id: 'Start' });
+        dataTable.addColumn({ type: 'number', id: 'End' });
+        dataTable.addRows(arrayData);
+
+        var options = {
+          timeline: {
+            showRowLabels: true,
+            colorByRowLabel: true
+          },
+          backgroundColor: '#ffd'
+        };
+
+        chart.draw(dataTable, options);
+
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Planemento - EDA</h2>
+    <div id="timeline" style="height: 180px;"></div>
+  </body>
+
+</html>

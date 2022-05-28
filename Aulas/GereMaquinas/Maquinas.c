@@ -15,6 +15,7 @@
 */
 
 #include "Maquinas.h"
+#include "Jobs.h"
 
 /**
  * @brief .
@@ -115,3 +116,94 @@ int ContaMaquinas(Maquina* a, char* nome, bool(*p)(void* v1, void*v2)) {
 	}
 	return tot;
 }
+
+
+
+#pragma region JOBS_OPER_MAQ
+/*
+* Manipukação Ficheiros Binarios na Arvore
+*/
+
+bool SaveOper(Operacao* h, int codJob, FILE* fp) {
+	Operacao* aux = h;
+	JobFile cel;
+
+	while (aux != NULL) {
+		cel.o = aux->o;
+		cel.j = codJob;
+		Maq* maquinas = aux->maquinas;
+		while (maquinas) {
+			cel.m = maquinas->m;
+			cel.t = maquinas->t;
+			fwrite(&cel, sizeof(JobFile), 1, fp);
+		}
+	}
+}
+
+bool SaveAllJobs(char* FileName, Job* h) {
+	FILE* fp;
+	//fp = fopen();
+
+	Job* aux = h;
+	bool aux = SaveOper(h->opers, aux->j, fp);
+
+	fclose(fp);
+}
+
+bool SaveJob(Job* j, FILE* fp) {
+	Operacao* aux = j->opers;
+	JobFile cel;
+
+	while (aux != NULL) {
+		cel.o = aux->o;
+		cel.j = j->j;
+		Maq* maquinas = aux->maquinas;
+		while (maquinas) {
+			cel.m = maquinas->m;
+			cel.t = maquinas->t;
+			fwrite(&cel, sizeof(JobFile), 1, fp);
+		}
+	}
+}
+
+#pragma region TREE
+
+bool SaveTreeJobsPreOrder(TreeJob* r, FILE* fp) {
+	if (r == NULL) return false;
+	//preOrder
+	return SaveJob(r->j, fp);
+	SaveTreeJobsPreOrder(r->left, fp);
+	SaveTreeJobsPreOrder(r->right, fp);
+}
+
+bool SaveTreeJobs(TreeJob* r, char* fileName) {
+	if (r == NULL) return false;
+	FILE* fp;
+	fp = fopen(fileName, "wb");
+	if (fp == NULL) return false;
+	SaveTreeJobsPreOrder(r, fp);
+	fclose(fp);
+	return true;
+}
+
+TreeJob* GetAll(char* fileName) {
+	FILE* fp = fopen(fileName, "rb");
+	if (!fp) return NULL;
+	JobFile aux;
+	TreeJob* root = NULL;
+
+	while (fread(&aux, sizeof(JobFile), 1, fp)!=EOF) {
+		//novoJob = Criar nodo de arvore
+		//r = InsereNodoTree(r,novoJob)
+		//novaOper = Criar node de operacao
+		//root->j->opers = InsereOperacaoJob(j->opers, novaOper);
+		//novaMaquina = Cria node de Maquina;
+		//root->j->opers = InsereMaquinaOperacoesJob(root->j->opers, aux.o, novaMaquina);
+	}
+
+	return root;
+}
+
+#pragma endregion
+
+#pragma endregion

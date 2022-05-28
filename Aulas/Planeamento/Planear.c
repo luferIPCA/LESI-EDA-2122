@@ -28,13 +28,16 @@ int main() {
 	aux.idJob = 1;
 	aux.idOper = 1;
 
+	//j1;o1;m1;3
+	aux.idJob = 1;
+	aux.idOper = 1;
+	OcupaVarios(plano, 0, 6, &aux);
+	//j1;o2;m4;6
+	aux.idJob = 1;
+	aux.idOper = 1;
 	OcupaVarios(plano, 0, 6, &aux);
 
-	Cel aux1;
-	aux1.idJob = 1;
-	aux1.idOper = 2;
-
-	OcupaVarios(plano, 2, 3, &aux1);
+	Ocupa(plano, 2, 3,1,2);
 
 
 #pragma endregion

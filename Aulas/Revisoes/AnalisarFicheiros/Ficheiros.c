@@ -10,6 +10,7 @@
 		fscanf
 		sscanf
 		strtok
+		"regex.h"
 	Ver: 
 	https://www.tutorialspoint.com/cprogramming/c_file_io.htm
 	https://users.informatik.haw-hamburg.de/~krabat/FH-Labor/gnupro/4_GNUPro_Libraries/a_GNUPro_C_Library/libcscanf_fscanf_sscanfscan_and_form.html
@@ -36,7 +37,7 @@ int main(int argc, char **argv) {
 
 #pragma region VERSAO1
 	//Ficheiro formatado
-	char c[TAM];
+	char c[TAM] = "";
 	char fileName[N] = "FicheiroDados.txt";
 	FILE* fp = NULL;					//handler de ficheiro de entrada
 	
@@ -76,14 +77,27 @@ int main(int argc, char **argv) {
 		//Restantes linhas são maquinas para operações
 		if (linOper > 0) { //
 			int m, t;
-			char* field;
-			field = strtok(c, "-");
-			while (field != NULL) {
-				printf("%s\n", field);
-				field = strtok(NULL, "-");
+			/*char *token;
+			token = strtok(c, "-");
+			while (token != NULL) {
+				printf("%s\n", token);
+				token = strtok(NULL, "-");
+			}*/
+			/*sscanf(c, "%*c%d%*c%d", &m, &t);
+			printf("Maq: %d, Tempo: %d\n", m, t);*/
+
+			char str[] = "Geeks-for-Geeks";
+
+			// Returns first token
+			char* token = strtok(str, "-");
+
+			// Keep printing tokens while one of the
+			// delimiters present in str[].
+			while (token != NULL) {
+				printf("%s\n", token);
+				token = strtok(NULL, "-");
 			}
-			//sscanf(c, "%*c%d%*c%d", &m, &t);
-			//printf("Maq: %d, Tempo: %d\n", m, t);
+
 			linOper--;
 			if (linOper == 0) {
 				l = 1;			//preparar para ler proximo grupo de linhas
@@ -96,7 +110,25 @@ int main(int argc, char **argv) {
 #pragma endregion
 
 #pragma region VERSAO2
+
 	//Ficheiro formatado como csv
 	//usar fgets()+strok()
+	//FILE* fp;
+	char c1[TAM];
+	char* token;
+	fp = fopen("FicheiroDados.csv", "r");
+	if (fp==NULL) exit(1); 
+	while (fgets(c1, TAM, fp)!=NULL){
+		c1[strlen(c1) - 1] = '\0';
+		token = strtok(c1, ";");
+		while (token != NULL) {
+			printf("%s\n", token);
+			token = strtok(NULL, ";");
+		}
+	}
+	fclose(fp);
+
+	
 #pragma endregion
+
 }

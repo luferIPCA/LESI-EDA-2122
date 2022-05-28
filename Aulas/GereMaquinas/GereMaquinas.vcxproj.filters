@@ -15,6 +15,9 @@
     <ClInclude Include="Maquinas.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Jobs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
