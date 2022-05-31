@@ -117,13 +117,10 @@ int ContaMaquinas(Maquina* a, char* nome, bool(*p)(void* v1, void*v2)) {
 	return tot;
 }
 
-
-
 #pragma region JOBS_OPER_MAQ
 /*
-* Manipukação Ficheiros Binarios na Arvore
+* Manipulação Ficheiros Binarios a partir da Lista
 */
-
 bool SaveOper(Operacao* h, int codJob, FILE* fp) {
 	Operacao* aux = h;
 	JobFile cel;
@@ -136,7 +133,9 @@ bool SaveOper(Operacao* h, int codJob, FILE* fp) {
 			cel.m = maquinas->m;
 			cel.t = maquinas->t;
 			fwrite(&cel, sizeof(JobFile), 1, fp);
+			maquinas = maquinas->next;
 		}
+		aux = aux->next;
 	}
 }
 
@@ -154,20 +153,26 @@ bool SaveJob(Job* j, FILE* fp) {
 	Operacao* aux = j->opers;
 	JobFile cel;
 
+	cel.j = j->j;
+	//Percorre todas as operações deste job
 	while (aux != NULL) {
 		cel.o = aux->o;
-		cel.j = j->j;
 		Maq* maquinas = aux->maquinas;
+		//Percorre todas as maquinas desta operação
 		while (maquinas) {
 			cel.m = maquinas->m;
 			cel.t = maquinas->t;
 			fwrite(&cel, sizeof(JobFile), 1, fp);
+			maquinas = maquinas->next;
 		}
+		aux = aux->next;
 	}
 }
 
 #pragma region TREE
-
+/*
+* Manipulação Ficheiros Binarios a partir da Arvore
+*/
 bool SaveTreeJobsPreOrder(TreeJob* r, FILE* fp) {
 	if (r == NULL) return false;
 	//preOrder
